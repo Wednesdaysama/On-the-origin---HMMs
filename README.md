@@ -35,7 +35,7 @@ For each protein set, we clustered these sequences using MMSeq2 with (-c 0.8 --c
 | selected_sodium_ATPase.hmm | 25 | 3.60 | 1912 | 0.59 | 0.62 | 0.52 |
 
 ### Test
-Demo data can be found [here](). 
+Demo data can be found [here](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/sample.fasta). 
 
 Results can be found [here](). 
 
