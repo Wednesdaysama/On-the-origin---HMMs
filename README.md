@@ -7,19 +7,19 @@ Eight protein sequence sets were collected. These included three **inferred** pu
 For each protein set, we clustered these sequences using MMSeq2 with (-c 0.8 --cov-mode 0 --min-seq-id 0.5) to reduce redundancy. Representative sequences were kept and aligned using Clustal Omega. Then, *hmmbuild* was used to construct HMMs. Finally, we checked these models and report the results.
 
 ### HMMs
-[inferred_sodium_ATPase.hmm](): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
+[inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
 
-[inferred_MrpA.hmm](): HMM for the entire inferred MrpA branch of the tree (Figure 4, first ring, orange).
+[inferred_MrpA.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_MrpA.hmm): HMM for the entire inferred MrpA branch of the tree (Figure 4, first ring, orange).
 
-[inferred_MrpD.hmm](): HMM for the entire inferred MrpD branch of the tree (Figure 4, first ring, red).
+[inferred_MrpD.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_MrpD.hmm): HMM for the entire inferred MrpD branch of the tree (Figure 4, first ring, red).
 
-[selected_MrpA.hmm](): HMM for the alkaline-enriched MrpA subfamilies branch of the tree (Figure 4, third ring, light blue).
+[selected_MrpA.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA.hmm): HMM for the alkaline-enriched MrpA subfamilies branch of the tree (Figure 4, third ring, light blue).
 
-[selected_MrpA_asterisk.hmm](): HMM for the alkaline-enriched MrpA* subfamilies branch of the tree (Figure 4, third ring, dark blue).
+[selected_MrpA_asterisk.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA_asterisk.hmm): HMM for the alkaline-enriched MrpA* subfamilies branch of the tree (Figure 4, third ring, dark blue).
 
-[selected_MrpD.hmm](): HMM for the alkaline-enriched MrpD subfamilies branch of the tree (Figure 4, third ring, brown).
+[selected_MrpD.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpD.hmm): HMM for the alkaline-enriched MrpD subfamilies branch of the tree (Figure 4, third ring, brown).
 
-[selected_MrpD_asterisk.hmm](): HMM for the alkaline-enriched MrpD* subfamilies branch of the tree (Figure 4, third ring, purple).
+[selected_MrpD_asterisk.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpD_asterisk.hmm): HMM for the alkaline-enriched MrpD* subfamilies branch of the tree (Figure 4, third ring, purple).
 
 ### HMM report
 
