@@ -7,7 +7,25 @@ Eight protein sequence sets were collected. These included three **inferred** pu
 For each protein set, we clustered these sequences using MMSeq2 with (-c 0.8 --cov-mode 0 --min-seq-id 0.5) to reduce redundancy. Representative sequences were kept and aligned using Clustal Omega. Then, *hmmbuild* was used to construct HMMs. Finally, we checked these models and report the results.
 
 ### HMMs
-[inferred_MrpA.hmm](): HMM for the entire inferred MrpA section of the tree.
+[inferred_sodium_ATPase.hmm](): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
+[inferred_MrpA.hmm](): HMM for the entire inferred MrpA branch of the tree (Figure 4, first ring, orange).
+[inferred_MrpD.hmm](): HMM for the entire inferred MrpD branch of the tree (Figure 4, first ring, red).
+[selected_MrpA.hmm](): HMM for the alkaline-enriched MrpA subfamilies branch of the tree (Figure 4, third ring, light blue).
+[selected_MrpA_asterisk.hmm](): HMM for the alkaline-enriched MrpA* subfamilies branch of the tree (Figure 4, third ring, dark blue).
+[selected_MrpD.hmm](): HMM for the alkaline-enriched MrpD subfamilies branch of the tree (Figure 4, third ring, brown).
+[selected_MrpD_asterisk.hmm](): HMM for the alkaline-enriched MrpD* subfamilies branch of the tree (Figure 4, third ring, purple).
 
+### HMM report
 
+| Model | seq | Eff_nseq | M | relent | info | p |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| inferred_MrpA.hmm | 477 | 49.38 | 1508 | 0.59 | 0.63 | 0.37 |
+| inferred_MrpD.hmm | 453 | 18.54 | 1225 | 0.59 | 0.63 | 0.44 |
+| inferred_sodium_ATPase.hmm | 275 | 15.30 | 1712 | 0.59 | 0.63 | 0.50 |
+| selected_MrpA.hmm | 61 | 3.01 | 777 | 0.59 | 0.61 | 0.52 |
+| selected_MrpA_asterisk.hmm | 22 | 5.34 | 1141 | 0.59 | 0.61 | 0.51 |
+| selected_MrpD.hmm | 29 | 2.71 | 498 | 0.59 | 0.62 | 0.54 |
+| selected_MrpD_asterisk.hmm | 106 | 6.14 | 1058 | 0.59 | 0.63 | 0.49 |
+| selected_sodium_ATPase.hmm | 25 | 3.60 | 1912 | 0.59 | 0.62 | 0.52 |
 
+### Test
