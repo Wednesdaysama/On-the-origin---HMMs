@@ -37,5 +37,5 @@ For each protein set, we clustered these sequences using MMSeq2 with (-c 0.8 --c
 ### Test
 Demo data can be found [here](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/sample.fasta). 
 
-Results can be found [here](). 
+Results can be found [here](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/results.txt). 
 
