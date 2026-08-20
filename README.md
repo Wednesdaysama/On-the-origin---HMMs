@@ -2,9 +2,9 @@
 We provide the hidden Markov models (HMMs) corresponding to the different functions we defined based on the two phylogenetic trees.
 
 ### Workflow
-Eight protein sequence sets were collected. These included three **inferred** putative sodium-transporting P-type ATPases, MrpA, and MrpD (the first ring of each phylogenetic tree). We also included five alkaline-enriched subfamilies we **selected**: putative sodium-transporting P-type ATPases, MrpA, MrpA*, MrpD, and MrpD* (the third ring of each phylogenetic tree).
+Eight protein sequence sets were collected. These included three **inferred** functions: putative sodium-transporting P-type ATPases, MrpA, and MrpD (the first ring of each phylogenetic tree). We also **selected** five alkaline-enriched subfamilies, namely putative sodium-transporting P-type ATPases, MrpA, MrpA, MrpD, and MrpD (from the third ring of each phylogenetic tree).
 
-For each protein set, we clustered these sequences using MMSeq2 with (-c 0.8 --cov-mode 0 --min-seq-id 0.5) to reduce redundancy. Representative sequences were kept and aligned using Clustal Omega. Then, *hmmbuild* was used to construct HMMs. Finally, we checked these models and report the results.
+For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. We retained representative sequences and aligned them with Clustal Omega, then built HMMs with hmmbuild. We then evaluated the resulting models and report the summary statistics.
 
 ### HMMs
 [inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
