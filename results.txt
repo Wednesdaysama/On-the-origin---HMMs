@@ -1,0 +1,557 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  inferred_MrpA.hmm
+# target sequence database:        sample.fasta
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       inferred_MrpA.aligned  [M=1508]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence              Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------              -----------
+   1.6e-237  782.9  72.4   1.8e-237  782.8  72.4    1.0  1  sp|Q9K2S2|MRPA_BACSU   Na(+)/H(+) antiporter subunit A OS=Bac
+   7.4e-231  760.9  89.7   8.3e-231  760.7  89.7    1.0  1  sp|Q9RGZ5|MRPA_ALKPO   Na(+)/H(+) antiporter subunit A OS=Alk
+   9.8e-225  740.6  58.8   1.1e-224  740.4  58.8    1.0  1  sp|Q9ZNG6|MNHA1_STAAU  Na(+)/H(+) antiporter subunit A1 OS=St
+   1.8e-224  739.7  58.5   2.1e-224  739.5  58.5    1.0  1  sp|Q6GAX4|MNHA1_STAAS  Na(+)/H(+) antiporter subunit A1 OS=St
+   3.2e-147  483.7  84.3   3.6e-147  483.5  84.3    1.0  1  sp|P33607|NUOL_ECOLI   NADH-quinone oxidoreductase subunit L 
+   8.6e-128  419.3  63.6     1e-127  419.1  63.6    1.0  1  sp|Q9RGZ2|MRPD_ALKPO   Na(+)/H(+) antiporter subunit D OS=Alk
+   1.7e-113  372.0  66.5     2e-113  371.7  66.5    1.0  1  sp|P0AFE8|NUOM_ECOLI   NADH-quinone oxidoreductase subunit M 
+   3.4e-111  364.3  66.0   3.8e-111  364.1  66.0    1.0  1  sp|O05229|MRPD_BACSU   Na(+)/H(+) antiporter subunit D OS=Bac
+   1.1e-103  339.5  58.6   1.2e-103  339.3  58.6    1.0  1  sp|P60686|MNHD1_STAAU  Na(+)/H(+) antiporter subunit D1 OS=St
+      8e-84  273.6  72.1    9.5e-84  273.4  72.1    1.0  1  sp|P0AFF0|NUON_ECOLI   NADH-quinone oxidoreductase subunit N 
+    6.8e-27   84.9   5.9    7.2e-27   84.8   5.9    1.0  1  sp|O05259|MRPB_BACSU   Na(+)/H(+) antiporter subunit B OS=Bac
+    3.3e-26   82.6   3.3    3.8e-26   82.4   3.3    1.0  1  sp|Q9RGZ4|MRPB_ALKPO   Na(+)/H(+) antiporter subunit B OS=Alk
+    3.6e-19   59.3   8.1    3.7e-19   59.3   8.1    1.0  1  sp|P60678|MNHB1_STAAU  Na(+)/H(+) antiporter subunit B1 OS=St
+
+
+Domain annotation for each sequence (and alignments):
+>> sp|Q9K2S2|MRPA_BACSU  Na(+)/H(+) antiporter subunit A OS=Bacillus subtilis (strain 168) OX=224308 GN=mrpA PE=1 SV=2
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  782.8  72.4    7e-238  1.8e-237     551    1249 ..       2     798 ..       1     801 [] 0.89
+
+  Alignments for each domain:
+  == domain 1  score: 782.8 bits;  conditional E-value: 7e-238
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrrlrrralallallallal.vlllpl.........vvalg.wgaglgillr..vDglsllfall 623 
+                             +ll l++l P+l af++++l++   +r  +++++l++ ++l +++lp          + ++  w + lgi+++  +Dgl+llfall
+   sp|Q9K2S2|MRPA_BACSU    2 QLLHLAILSPFLFAFIIPFLAKYA-KRVHTGWFVLILPVLLfIYFLPMirmtqsgetLRSVLeWIPSLGINFTvyIDGLGLLFALL 86  
+                             67899***************8875.45566666433322346777722566778997334455899999999999*********** PP
+
+  inferred_MrpA.aligned  624 vsligllvllYslgYmkg...rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtll 706 
+                             +++ig lv+lYs+ Y+++   +lg f+++ll+f++amlG+vl ++  +l++FWEltslsS+lLig+w+k+e++r++a k ll+t+ 
+   sp|Q9K2S2|MRPA_BACSU   87 ITGIGSLVTLYSIFYLSKekeQLGPFYVYLLMFMGAMLGVVLVDNVMVLYMFWELTSLSSFLLIGYWYKREKSRYGAAKSLLITVS 172 
+                             ********************************************************************6667************** PP
+
+  inferred_MrpA.aligned  707 GglalLaGilllyaatGsll.selaala.a.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlL.SatmvKaG 788 
+                             Ggl++L G++lly +t s++  e+ ++  + a++  l+ +a++L+llG+++KsAqfPf +WLPdA m+APtPvSA+L SatmvKaG
+   sp|Q9K2S2|MRPA_BACSU  173 GGLCMLGGFILLYLITDSFSiREMVHQVqLiAGHE-LFIPAMILILLGAFTKSAQFPFYIWLPDA-MEAPTPVSAYLhSATMVKAG 256 
+                             ****************9995566665554577788.99***************************.******************** PP
+
+  inferred_MrpA.aligned  789 vyllaRllpll.g..lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp............alaaallh 859 
+                             +y++aR++p++     w++++ ++G++t+++G++ A+ QtdlK +LA+StvsQlG ++ ++G+ ++            a  aa++h
+   sp|Q9K2S2|MRPA_BACSU  257 IYVIARFSPIFaFsaQWFWIVSLVGLFTMVWGSFHAVKQTDLKSILAFSTVSQLGMIISMLGVSAAalhyghteyytvAAMAAIFH 342 
+                             ***********8468778*********************************************999************99****** PP
+
+  inferred_MrpA.aligned  860 llnHalyKalLFlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagll......gwll 938 
+                             l+nHa +K+ LF+++G+i+ +tgtrdir+lgGL   mP+t+ + lig +s+aGlPpfnGF+sKe++++++l   ++      +w +
+   sp|Q9K2S2|MRPA_BACSU  343 LINHATFKGSLFMAVGIIDhETGTRDIRKLGGLMAIMPITFTISLIGTFSMAGLPPFNGFLSKEMFFTSMLRVTHFdlfnvqTWGV 428 
+                             ************************************************************************9999*****96666 PP
+
+  inferred_MrpA.aligned  939 ...allllasaltaayflrllyrvFfgppreesak...keapllmllpmllLaalclllGl.Pglllglllaa.l.aaa....... 1008
+                                +++ ++s++t++y ++ll+++F g  ++e+ +   +eap +ml+p+++L+al++ l++ P  l   l+++ + +++       
+   sp|Q9K2S2|MRPA_BACSU  429 lfpLFAWIGSVFTFIYSMKLLFKTFRGNYQPEQLEkqaHEAPVGMLVPPVILVALAVSLFFfPNILSYSLIEPaMnSIYptlldgh 514 
+                             68999*************************99877*99999**********************99955555554343336677889 PP
+
+  inferred_MrpA.aligned 1009 ............ftlalllslllgalgfalgrll..grapawf......rr.....drvld.ll......agrllrrlqnGrlqry 1062
+                                         +t +ll++++++++g + g+l         +      ++     +r++d ll      + r+++   +G l++y
+   sp|Q9K2S2|MRPA_BACSU  515 ekfhvhisqwhgVTTELLMTAGIVVIGTI-GYLSlnK-----WkgiyklFPskltlNRLYDkLLtmmekgSYRVTKQYMTGFLRDY 594 
+                             99988887765544466666555555554.3322341.....2333344114567899999999********************** PP
+
+  inferred_MrpA.aligned 1063 llwillgllgllllllwll.................ltwlllllvaaalaavaarsrlaavlalgvvglgvallfvlfgapDlalT 1131
+                             ll+i++g+++l++  ++++                 +++l+l++++a++a+v+arsrl+a++algvvg+ +al+fv+f+apDlalT
+   sp|Q9K2S2|MRPA_BACSU  595 LLYIFAGFIILIG-GAFAIkggfsfktegmakigvyEIILTLVMISATVATVFARSRLTAIIALGVVGYTLALFFVIFRAPDLALT 679 
+                             *****99877885.44555889*********9999888888********************************************* PP
+
+  inferred_MrpA.aligned 1132 qllvetltvvlfllvlrrlpaflpl.ssllkrgrdalialafGllvtllllaalavglaepisgfflensapegggrnvVnviLvd 1216
+                             ql++et++v lfll++++lp+ + + ++++ r+ +++i+l++G++vtll +a +++++ ++i  ff+++s ++ggg nvVnviLvd
+   sp|Q9K2S2|MRPA_BACSU  680 QLVIETISVALFLLCFYHLPKLRLKtKTRTFRMTNFIISLGVGVIVTLLGIASSSQRTKDSIASFFVKHSHDLGGGDNVVNVILVD 765 
+                             *********************9999555********************************************************** PP
+
+  inferred_MrpA.aligned 1217 fRAlDTlGEitVLaiAalGvyallrhrrkkgll 1249
+                             fR++DT+ EitVL+iAalG+y++++ + k++++
+   sp|Q9K2S2|MRPA_BACSU  766 FRGFDTMFEITVLTIAALGIYSMIKTKVKEEGK 798 
+                             *************************99987765 PP
+
+>> sp|Q9RGZ5|MRPA_ALKPO  Na(+)/H(+) antiporter subunit A OS=Alkalihalophilus pseudofirmus (strain ATCC BAA-2126 / JCM 17
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  760.7  89.7  3.2e-231  8.3e-231     553    1247 ..       4     802 ..       1     805 [] 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 760.7 bits;  conditional E-value: 3.2e-231
+  inferred_MrpA.aligned  553 llllvllPllgaflllllgrrrlrrralalla.llallal.vlllpl.........vv.alg.wgaglgillr..vDglsllfall 623 
+                             l ++ + P+l+a+l+++l +  +rr  +++++ +l+l+ l ++++ +         vv ++  w + lgi+++  vDglsllfall
+   sp|Q9RGZ5|MRPA_ALKPO    4 LHWATISPFLLAILIPFLYKY-ARRIHTGWFVlVLPLV-LfIYFI-QylsitstggVVeHTIpWVPSLGINFTvfVDGLSLLFALL 86  
+                             3455669***********766.4567777764133443.356666.1235677899444555599********************* PP
+
+  inferred_MrpA.aligned  624 vsligllvllYslgYmkg...rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwh.kteearraalkyllvtl 705 
+                             +++ig+lv+lYs+ Y+++   +l+ f+++ll+f++amlG+vl+++L++l+vFWEltsl+S lLi +w+ +++ + ++a k +l+t+
+   sp|Q9RGZ5|MRPA_ALKPO   87 ITGIGTLVILYSIFYLSKkteSLNNFYVYLLMFMGAMLGVVLSDNLIVLYVFWELTSLASSLLISYWFhREK-STYGAQKSMLITV 171 
+                             ******************************************************************986766.************* PP
+
+  inferred_MrpA.aligned  706 lGglalLaGilllyaatGsll.selaala.aalsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlL.SatmvKaG 788 
+                             +Gg+a+L G+ lly +tG+++  +++++  +  s+ l+l+a++L+llG+++KsAqfPfH+WLPdA m+APtPvSA+L SatmvKaG
+   sp|Q9RGZ5|MRPA_ALKPO  172 FGGFAMLGGFSLLYVMTGTFSiRGIIENVdLVTSSELFLPAMILVLLGAFTKSAQFPFHIWLPDA-MEAPTPVSAYLhSATMVKAG 256 
+                             *******************96688888775455677*****************************.******************** PP
+
+  inferred_MrpA.aligned  789 vyllaRllpll.g..lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp...............alaaa 856 
+                             +yl+aRl p++ g   w+++l+++G++t l+G+  A+rQ+dlK +LA+StvsQlGl+++++Glg++               a+ aa
+   sp|Q9RGZ5|MRPA_ALKPO  257 IYLVARLTPVFaGsaEWFWLLTGFGVVTLLWGSTSAVRQKDLKGILAFSTVSQLGLIMTLLGLGSAaiyfgesvdpafysfAIMAA 342 
+                             ***********9789889**********************************************99******************** PP
+
+  inferred_MrpA.aligned  857 llhllnHalyKalLFlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagll....... 934 
+                             ++hl+nHa +K+ LF++aG+i+ +tgtrdir+lgGL   mP+t+ + lig +s+aGlPpfnGF+sKe++++a+l a          
+   sp|Q9RGZ5|MRPA_ALKPO  343 IFHLINHATFKGSLFMTAGIIDhETGTRDIRKLGGLMAIMPVTFTVSLIGLASMAGLPPFNGFLSKEMFFTALLRATEMnafnmet 428 
+                             ***************************************************************************99889999987 PP
+
+  inferred_MrpA.aligned  935 .gwll.allllasaltaayflrllyrvFfgppreesak...keapllmllpmllLaalclllGl.Pglllglllaa...laaa... 1008
+                              g+++ +l+ +as++t++y+l +++++F g+ ++e  +   +eap++ml+ +++L+ l++++G+ P  l   ++++   +  +   
+   sp|Q9RGZ5|MRPA_ALKPO  429 fGIIIvVLAWIASVFTFLYCLIMFFKTFTGKFKPENYDvkvHEAPIGMLISPVILGSLVIVFGFfPNILAYTIIEPamqA--Vlpt 512 
+                             633337***************************99766*99999*********************999855555554441..2456 PP
+
+  inferred_MrpA.aligned 1009 .................ftlalllslllgalgfalgrll.....grap.........awfrrdrvld.ll.....agrllrrlqn. 1056
+                                              f+++l ++++++a+g++l++ +        +         +wf     +d  l     +++ ++r+q  
+   sp|Q9RGZ5|MRPA_ALKPO  513 vladgelfhvniymwhgFNAELFMTMGVVAAGIILFLMMknwakA--AfymkerdplNWF-----YDsSLsgvitGSQFVTRIQMt 591 
+                             678999*9****999998889999999999999885533654430..1233344445555.....666668889955555555544 PP
+
+  inferred_MrpA.aligned 1057 Grlqryllwillgllgllllllwll..................ltwll.lllvaaalaavaarsrlaavlalgvvglgvallfvlf 1123
+                             G l++y++++++++++ll+   +++                   +w++ +++++a+l  ++ ++r++av+++gv+g+ +allfv+f
+   sp|Q9RGZ5|MRPA_ALKPO  592 GLLRDYFAYMIVFMILLLG---YTMfrydafaidttnvteiapYIWVItIVFIVATLSIPFINKRITAVVVVGVIGFLLALLFVVF 674 
+                             ***********99655554...55567899999******9999888889777777888**************************** PP
+
+  inferred_MrpA.aligned 1124 gapDlalTqllvetltvvlfllvlrrlpaflpl.ssllkrgrdalialafGllvtllllaalavgl...aepisgfflensapegg 1205
+                             +apDlalTqll+et+tv+l++l++++lp+ +++  +++ ++++++i++++G ++t+++l+ la g    +epis+ff ens +++g
+   sp|Q9RGZ5|MRPA_ALKPO  675 RAPDLALTQLLIETVTVLLLMLAFYHLPELRKEeFKPRFNVLNLIISIGVGFFITAIALSSLALGNeagIEPISQFFIENSKELAG 760 
+                             ******************************99963499***************************9******************** PP
+
+  inferred_MrpA.aligned 1206 grnvVnviLvdfRAlDTlGEitVLaiAalGvyallrhrrkkg 1247
+                             g n+VnviLvdfR+lDT+ E+ VL+iAalGv+al+++r+  +
+   sp|Q9RGZ5|MRPA_ALKPO  761 GYNMVNVILVDFRGLDTMLEVLVLGIAALGVIALIKLRMTGR 802 
+                             *************************************99765 PP
+
+>> sp|Q9ZNG6|MNHA1_STAAU  Na(+)/H(+) antiporter subunit A1 OS=Staphylococcus aureus OX=1280 GN=mnhA1 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  740.4  58.8  4.2e-225  1.1e-224     551    1254 ..       2     798 ..       1     801 [] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 740.4 bits;  conditional E-value: 4.2e-225
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrrlrrralallallallal.vlllpl.........vvalg.wgaglgillr..vDglsllfall 623 
+                             +ll ++v+lPl+ a+++++l r   +r  l++++l + +++ +++l l         v  +  w +++g+++   +Dgl+llf ll
+  sp|Q9ZNG6|MNHA1_STAAU    2 SLLHIAVILPLIFALIIPILYRFF-KRIHLGWFVLSVPIVIfIYMLTLikttmsgntVMKTLnWMPHFGMNFDlyLDGLGLLFSLL 86  
+                             56788999************6553.45778877543332235666622566789996324555889999999999*********** PP
+
+  inferred_MrpA.aligned  624 vsligllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtllG 707 
+                             +s+ig lv+lYs+gY+++  +lg f+++lllf++amlG+vl+++ + l++FWElts+sS+lLi fw+++++++++a k l++t++G
+  sp|Q9ZNG6|MNHA1_STAAU   87 ISGIGSLVVLYSIGYLSKseQLGNFYCYLLLFMGAMLGVVLSDNVIILYLFWELTSFSSFLLISFWRERQASIYGAQKSLIITVFG 172 
+                             ******************************************************************95566*************** PP
+
+  inferred_MrpA.aligned  708 glalLaGilllyaatGsll.selaala.a.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlL.SatmvKaGv 789 
+                             gl lL Gi+ll+  t s++   ++++a   ++sp ++ +a++L+++G+++KsAqfPf +WLPdA m+APtPvSA+L SatmvKaG+
+  sp|Q9ZNG6|MNHA1_STAAU  173 GLSLLGGIILLAIPTQSFSiQYMIQHAsEiQNSP-FFIFAMILIMIGAFTKSAQFPFYIWLPDA-MEAPTPVSAYLhSATMVKAGL 256 
+                             *****************96699999886567666.899**************************.********************* PP
+
+  inferred_MrpA.aligned  790 yllaRllpll.g..lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp..............alaaall 858 
+                             yl+aR+ p++ +  +w ++++++G+it ++++l A  Q dlK +LA+StvsQlG +++++G+g+               a++aa++
+  sp|Q9ZNG6|MNHA1_STAAU  257 YLIARMTPIFaAsqGWVWTVTLVGLITLFWASLNATKQQDLKGILAFSTVSQLGMIMAMLGIGAIsyhyqgddskiyaaAFTAAIF 342 
+                             **********85687889*********************************************88********************* PP
+
+  inferred_MrpA.aligned  859 hllnHalyKalLFlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagll........g 935 
+                             hl+nHa +K++LF+ +Ga++  tgtrd+ +lgGL   mP+ + +++i als+aG+PpfnGF+sKe +le ++ a+++        g
+  sp|Q9ZNG6|MNHA1_STAAU  343 HLINHATFKGALFMITGAVDhSTGTRDVKKLGGLLTIMPISFTITVITALSMAGVPPFNGFLSKESFLETTFTASQAnlfsvdtlG 428 
+                             ***************************************************************************99998888764 PP
+
+  inferred_MrpA.aligned  936 wll...allllasaltaayflrllyrvFfgppreesak...keapllmllpmllLaalclllGl.Pglllglllaa.laaa..... 1008
+                               +   ++++++s++t++y ++++ ++Ffg+ ++e+ +   +e+++lmll +++La l++++Gl Pg l + ++++    +     
+  sp|Q9ZNG6|MNHA1_STAAU  429 --YlfpIIGIVGSVFTFVYSIKFIMHIFFGQYKPEQLPkkaHEVSILMLLSPAILATLVIVFGLfPGILTNSIIEPaT--Ssinht 510 
+                             ..1358***************************99877*98888*************************997776531..134556 PP
+
+  inferred_MrpA.aligned 1009 ................ftlallls.....lllgalgfalgrll.....grap......awfrrdrvld.ll......agrllrrlq 1055
+                                             f     ls     +l ++l++ +++ +     + +p       w+      +  +      + + + +  
+  sp|Q9ZNG6|MNHA1_STAAU  511 viddvefhmfhgltpaF-----LStlviyILGILLIVTFSY-WvkllqR-QPgkltfnYWY------NrSAnvipnySEKMTNSYV 583 
+                             68999988875533221.....2232111333333333333.2465531.21344444444......2222556888899999*** PP
+
+  inferred_MrpA.aligned 1056 nGrlqryllwillgllgllllllwll..................ltwlllllvaaalaavaarsrlaavlalgvvglgvallfvlf 1123
+                             + + ++ l++i+++l +ll++  +++                  +  +++ll++aa++  +a+srl ++++l++vg++v++lf++f
+  sp|Q9ZNG6|MNHA1_STAAU  584 TDYSRNNLVIIFGAL-ILLTF--VTIfsvpfninfkdvspirifEVCIVILLLSAAFLILFAKSRLFSIIMLSAVGYAVSVLFIFF 666 
+                             ************863.33322..22235789999999999888755555888889999**************************** PP
+
+  inferred_MrpA.aligned 1124 gapDlalTqllvetltvvlfllvlrrlpaflplss.llkrgrdalialafGllvtllllaalavglaepisgfflensapegggrn 1208
+                              apDlalTq++ve++++ lfll++++lp+  + ++ ++ ++ +alia ++Gl v ++ l a + +++e+is f++e+ +++++g+n
+  sp|Q9ZNG6|MNHA1_STAAU  667 KAPDLALTQFVVESISTALFLLCFYHLPNLNRYNEkRSFQLTNALIAGGVGLSVIIIGLIAYGNRHFESISKFYQEHVYDLAHGKN 752 
+                             ******************************999665************************************************** PP
+
+  inferred_MrpA.aligned 1209 vVnviLvdfRAlDTlGEitVLaiAalGvyallrhrrkkgllflaaa 1254
+                             +VnviLvdfR++DTl E  VL+iA+l+vy+++++r+k++++ ++++
+  sp|Q9ZNG6|MNHA1_STAAU  753 MVNVILVDFRGMDTLFESSVLGIAGLAVYTMIKLRKKRQTQGNEVK 798 
+                             ***************************************9998876 PP
+
+>> sp|Q6GAX4|MNHA1_STAAS  Na(+)/H(+) antiporter subunit A1 OS=Staphylococcus aureus (strain MSSA476) OX=282459 GN=mnhA1 
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  739.5  58.5  7.9e-225  2.1e-224     551    1254 ..       2     798 ..       1     801 [] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 739.5 bits;  conditional E-value: 7.9e-225
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrrlrrralallallallal.vlllpl.........vvalg.wgaglgillr..vDglsllfall 623 
+                             +ll ++v+lPl+ a+++++l r   +r  l++++l + +++ +++l l         v  +  w +++g+++   +Dgl+llf ll
+  sp|Q6GAX4|MNHA1_STAAS    2 SLLHIAVILPLIFALIIPILYRF-FKRIHLGWFVLPVPIVIfIYMLTLikttmsgntVMKTLnWMPHFGMNFDlyLDGLGLLFSLL 86  
+                             56788999************655.346788887533222336666622566789996324555889999999999*********** PP
+
+  inferred_MrpA.aligned  624 vsligllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtllG 707 
+                             +s+ig lv+lYs+gY+++  +lg f+++lllf++amlG+vl+++ + l++FWElts+sS+lLi fw+++++++++a k l++t++G
+  sp|Q6GAX4|MNHA1_STAAS   87 ISGIGSLVVLYSIGYLSKseQLGNFYCYLLLFMGAMLGVVLSDNVIILYLFWELTSFSSFLLISFWRERQASIYGAQKSLIITVFG 172 
+                             ******************************************************************95566*************** PP
+
+  inferred_MrpA.aligned  708 glalLaGilllyaatGsll.selaala.a.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlL.SatmvKaGv 789 
+                             gl lL Gi+ll+  t s++   ++++a   ++sp ++ +a++L+++G+++KsAqfPf +WLPdA m+APtPvSA+L SatmvKaG+
+  sp|Q6GAX4|MNHA1_STAAS  173 GLSLLGGIILLAIPTQSFSiQYMIQHAsEiQNSP-FFIFAMILIMIGAFTKSAQFPFYIWLPDA-MEAPTPVSAYLhSATMVKAGL 256 
+                             *****************96699999886567666.899**************************.********************* PP
+
+  inferred_MrpA.aligned  790 yllaRllpll.g..lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp..............alaaall 858 
+                             yl+aR+ p++ +  +w ++++++G+it ++++l A  Q dlK +LA+StvsQlG +++++G+g+               a++aa++
+  sp|Q6GAX4|MNHA1_STAAS  257 YLIARMTPIFaAsqGWVWTVTLVGLITLFWASLNATKQQDLKGILAFSTVSQLGMIMAMLGIGAIsyhyqgddskiyaaAFTAAIF 342 
+                             **********85687889*********************************************88********************* PP
+
+  inferred_MrpA.aligned  859 hllnHalyKalLFlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagll........g 935 
+                             hl+nHa +K++LF+ +Ga++  tgtrd+ +lgGL   mP+ + +++i als+aG+PpfnGF+sKe +le ++ a+++        g
+  sp|Q6GAX4|MNHA1_STAAS  343 HLINHATFKGALFMITGAVDhSTGTRDVKKLGGLLTIMPISFTITVITALSMAGVPPFNGFLSKESFLETTFTASQAnlfsvdtlG 428 
+                             ***************************************************************************99998888764 PP
+
+  inferred_MrpA.aligned  936 wll...allllasaltaayflrllyrvFfgppreesak...keapllmllpmllLaalclllGl.Pglllglllaa.laaa..... 1008
+                               +   ++++++s++t++y ++++ ++Ffg+ ++e+ +   +e+++lmll +++La l++++Gl Pg l + ++++    +     
+  sp|Q6GAX4|MNHA1_STAAS  429 --YlfpIIGIVGSVFTFVYSIKFIMHIFFGQYKPEQLPkkaHEVSILMLLSPAILATLVIVFGLfPGILTNSIIEPaT--Ssinht 510 
+                             ..1358***************************99877*98888*************************997776531..134556 PP
+
+  inferred_MrpA.aligned 1009 ................ftlallls.....lllgalgfalgrll.....grap......awfrrdrvld.ll......agrllrrlq 1055
+                                             f     ls     +l ++l++ +++ +     + +p       w+      +  +      + + + +  
+  sp|Q6GAX4|MNHA1_STAAS  511 viddvefhmfhgltpaF-----LStlviyILGILLIVTFSY-WvkllqR-QPgkltfnYWY------NrSAnvipnySEKMTNSYV 583 
+                             68999988875533221.....2232111333333333333.2465531.21344444444......2222556888899999*** PP
+
+  inferred_MrpA.aligned 1056 nGrlqryllwillgllgllllllwll..................ltwlllllvaaalaavaarsrlaavlalgvvglgvallfvlf 1123
+                             + + ++ l++i+++l +ll++  +++                  +  +++ll++aa++  +a+srl ++++l++vg++v++lf++f
+  sp|Q6GAX4|MNHA1_STAAS  584 TDYSRNNLVIIFGAL-ILLTF--VTIfsvpfninfkdvspirifEVCIVILLLSAAFLILFAKSRLFSIIMLSAVGYAVSVLFIFF 666 
+                             ************863.33322..22235789999999999888755555888889999**************************** PP
+
+  inferred_MrpA.aligned 1124 gapDlalTqllvetltvvlfllvlrrlpaflplss.llkrgrdalialafGllvtllllaalavglaepisgfflensapegggrn 1208
+                              apDlalTq++ve++++ lfll++++lp+  + ++ ++ ++ +alia ++Gl v ++ l a + +++e+is f++e+ +++++g+n
+  sp|Q6GAX4|MNHA1_STAAS  667 KAPDLALTQFVVESISTALFLLCFYHLPNLNRYNEkRSFQLTNALIAGGVGLSVIIIGLIAYGNRHFESISKFYQEHVYDLAHGKN 752 
+                             ******************************999665************************************************** PP
+
+  inferred_MrpA.aligned 1209 vVnviLvdfRAlDTlGEitVLaiAalGvyallrhrrkkgllflaaa 1254
+                             +VnviLvdfR++DTl E  VL+iA+l+vy+++++r+k++++ ++++
+  sp|Q6GAX4|MNHA1_STAAS  753 MVNVILVDFRGMDTLFESSVLGIAGLAVYTMIKLRKKRQTQGNEVK 798 
+                             ***************************************9998876 PP
+
+>> sp|P33607|NUOL_ECOLI  NADH-quinone oxidoreductase subunit L OS=Escherichia coli (strain K12) OX=83333 GN=nuoL PE=1 SV
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  483.5  84.3  1.4e-147  3.6e-147     551    1079 ..       2     610 ..       1     613 [] 0.80
+
+  Alignments for each domain:
+  == domain 1  score: 483.5 bits;  conditional E-value: 1.4e-147
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrr.lrrralallallall.al......vlllpl................vvalg.wgaglgill 611 
+                              +l+l+++lPl+g +ll++ ++r+    ++ a+++++++  a+      +    +                +  +  +    g++l
+   sp|P33607|NUOL_ECOLI    2 NMLALTIILPLIGFVLLAFSRGRWsE--NVSAIVGVGSVGlAAlvtafiG----VdffangeqtysqplwtW--MSvGDFNIGFNL 79  
+                             5788999****776666666555432..3333333332223222332220....144456677777766331..333444678888 PP
+
+  inferred_MrpA.aligned  612 rvDglsllfallvsligllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearr 695 
+                             ++Dglsl ++ +v+++g+l++ Y+  Ym+g  ++ rffa+ +lf+a+m+ lvla++Ll+++++WE ++l+SylLigf++ ++++ +
+   sp|P33607|NUOL_ECOLI   80 VLDGLSLTMLSVVTGVGFLIHMYASWYMRGeeGYSRFFAYTNLFIASMVVLVLADNLLLMYLGWEGVGLCSYLLIGFYYTDPKNGA 165 
+                             8****************************************************************************887777*** PP
+
+  inferred_MrpA.aligned  696 aalkyllvtllGglalLaGilllyaatGsll.selaala.a..alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvS 777 
+                             aa+k+++vt++G+++l +++++ly+  G+l+  e+ +la a  a+++ +l++a l+ll G+ +KsAq+P+++WL dA ma+PtPvS
+   sp|P33607|NUOL_ECOLI  166 AAMKAFVVTRVGDVFLAFALFILYNELGTLNfREMVELApAhfADGNNMLMWATLMLLGGAVGKSAQLPLQTWLADA-MAGPTPVS 250 
+                             ******************************889999989856988888*****************************.******** PP
+
+  inferred_MrpA.aligned  778 AlL.SatmvKaGvyllaRllpll..g..lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtpalaaall 858 
+                             Al+ +atmv+aGvyl+aR + l+     +   ++ ++Ga+t ll++++Al+Qtd+Kr+LAYSt+sQ+G+m+l++G+   a+ aa++
+   sp|P33607|NUOL_ECOLI  251 ALIhAATMVTAGVYLIARTHGLFlmTpeV-LHLVGIVGAVTLLLAGFAALVQTDIKRVLAYSTMSQIGYMFLALGVQ--AWDAAIF 333 
+                             ***********************972664.48********************************************8..66***** PP
+
+  inferred_MrpA.aligned  859 hllnHalyKalLFlgaGaii.rtgt.rdirelgGLgrrmPltaaafligalslaGlPp.fnGFvsKelileaaleagllgwllall 941 
+                             hl++Ha++KalLFl+ G++i ++++ ++i ++gGL+++ Pl+ ++fl+g+++l++lP+ ++GF+sK+ il++a + g+   l++++
+   sp|P33607|NUOL_ECOLI  334 HLMTHAFFKALLFLASGSVIlACHHeQNIFKMGGLRKSIPLVYLCFLVGGAALSALPLvTAGFFSKDEILAGAMANGHI-NLMVAG 418 
+                             *********************88555*******************************7588****************95.45699* PP
+
+  inferred_MrpA.aligned  942 llasaltaayflrllyrvFfgppreesak.keapllmllpmllLaalclllGl...Pglllglllaa..laaa....ftlallls. 1016
+                             l+++++t +y +r+++ vF+g+++ ++++ k  + +  lp+++L +l+ ++G    P +l g l+++  l  a    +tl+ + s 
+   sp|P33607|NUOL_ECOLI  419 LVGAFMTSLYTFRMIFIVFHGKEQIHAHAvK--GVTHSLPLIVLLILSTFVGAlivP-PLQGVLPQTteL--AhgsmLTLE-ITSg 498 
+                             ***********************99875562..444556888888888888888844.453687776443..134563321.2234 PP
+
+  inferred_MrpA.aligned 1017 lllgalgfalgrll.........grap.........awf.....rrdrvld.ll.............................agr 1049
+                             ++++++++++++l+            +          w+     + d ++d ++                             ag+
+   sp|P33607|NUOL_ECOLI  499 VVAVVGILLAAWLWlgkrtlvtsI--AnsapgrllgTWWynawgF-DWLYDkVFvkpflgiawllkrdplnsmmnipavlsrfAGK 581 
+                             444444444555557665555541..0555666777555564431.3333333344446777788888888888999999***999 PP
+
+  inferred_MrpA.aligned 1050 llrrlqnGrlqryllwillgllgllllllw 1079
+                              l    nG+l++y++ + +g++++l+ ll+
+   sp|P33607|NUOL_ECOLI  582 GLLLSENGYLRWYVASMSIGAVVVLA-LLM 610 
+                             999***************99544442.222 PP
+
+>> sp|Q9RGZ2|MRPD_ALKPO  Na(+)/H(+) antiporter subunit D OS=Alkalihalophilus pseudofirmus (strain ATCC BAA-2126 / JCM 17
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  419.1  63.6  3.9e-128    1e-127     550    1002 ..       2     474 ..       1     490 [. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 419.1 bits;  conditional E-value: 3.9e-128
+  inferred_MrpA.aligned  550 lllllllvllPl.lgaflllllgrrr.lrrrala.llallallal.vlllpl.......vv.alg.wgaglgillrvDglsllfal 622 
+                             + l++l +l+P+ +g+fl+l+ +  + l  r+++ +++++ l ++ ++l+ +        v +lg w+a++gi+l++D ++ ++++
+   sp|Q9RGZ2|MRPD_ALKPO    2 NNLVILPILIPFiVGSFLILFAK-HHsLQ-RVISgFAVVGML-LVsIYLA-VdvyqngiTVlELGnWQAPFGIVLVADLFATMMVI 83  
+                             567889999***66666666654.55344.444414433333.2357777.2457799745589********************** PP
+
+  inferred_MrpA.aligned  623 lvsligllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtll 706 
+                             l+s++g++ l++++  ++    +  f+++ +++la+ +G++l+gdL++lfvF+E++ ++Sy Li+   +t+  +r +lky +++++
+   sp|Q9RGZ2|MRPD_ALKPO   84 LASIVGVVCLFFAFQTISSerEKYYFYPFYFFLLAGVNGAFLTGDLFNLFVFFEVMLIASYILIVLG-GTKYQLRESLKYVVINVF 168 
+                             *****************99*9888999***************************************8.89999************* PP
+
+  inferred_MrpA.aligned  707 GglalLaGilllyaatGsll.selaalaa.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlLSatmvKaGvy 790 
+                             +++++ +G++++y++tG+l+ ++la   +  + +++l ++++ +l+ f+ K ++fP+ fWLP  +   P++++Al  ++++K+G+y
+   sp|Q9RGZ2|MRPD_ALKPO  169 ASILFIVGVAYIYSITGTLNmADLAVKVGeLEQTGVLNVIAVIFLVVFAMKGGLFPLYFWLPRSYFGPPAAIAALFGGLLTKVGIY 254 
+                             *******************99**99876455667799****************************99999999999********** PP
+
+  inferred_MrpA.aligned  791 llaRllpll..g...lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp.alaaallhllnHalyKalL 870 
+                             +++R ++l+  +   ++++++++l+++t+++G+l A+ Q d+Kr+L+Y+++sQ+G+mv+g+G+ t  a+a+a++++ +H++ Ka+L
+   sp|Q9RGZ2|MRPD_ALKPO  255 AIMRTFTLIfnHdpgFTHTLILILAGLTMFFGVLGAVSQFDFKRILSYHIISQVGYMVMGLGIYTQlAIAGAIYYIAHHIIVKAAL 340 
+                             *******99974789999*********************************************988******************** PP
+
+  inferred_MrpA.aligned  871 FlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagllgwllallllasaltaayflrl 955 
+                             Fl aGa    tgt+d+ ++gGL ++ P++a++f+i a slaG+Pp++GF+sK+++++aa+    + +++a++l+ ++lt+++++++
+   sp|Q9RGZ2|MRPD_ALKPO  341 FLFAGATQrITGTTDLKKMGGLLKTHPWLAWMFFISAISLAGIPPLSGFFSKFALILAAFLNENY-IIAAVALAVGLLTLFSMMKI 425 
+                             ************************************************************99986.56699*************** PP
+
+  inferred_MrpA.aligned  956 lyrvFfgppreesak..keapllmllpmllLaalclllGl.Pglllglll 1002
+                             + ++F+g+++++++    +++  +llp++ L+al+++lG+ +++++++ l
+   sp|Q9RGZ2|MRPD_ALKPO  426 FIYAFWGEQKHTEEQanFKVGK-LLLPIVPLVALTIILGFaAEPIFQYSL 474 
+                             **********988779754554.9*****************999877544 PP
+
+>> sp|P0AFE8|NUOM_ECOLI  NADH-quinone oxidoreductase subunit M OS=Escherichia coli (strain K12) OX=83333 GN=nuoM PE=1 SV
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  371.7  66.5  7.6e-114    2e-113     551    1003 ..       1     491 [.       1     506 [. 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 371.7 bits;  conditional E-value: 7.6e-114
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrr..lrrralallallallal...vlllpl.................vvalgwgaglgillr.. 612 
+                             +ll++l+l+P++g+fl+    +r   + +r++al++++++lal   ++l  +                 + +++w + +gi+ +  
+   sp|P0AFE8|NUOM_ECOLI    1 MLLPWLILIPFIGGFLCWQT-ERFgvKVPRWIALITMGLTLALslqLWL--QggysltqsagipqwqseF-DMPWIPRFGISIHla 82  
+                             4678999*******998776.4556777999999986666533467555..2344555667888866431.344777777776677 PP
+
+  inferred_MrpA.aligned  613 vDglsllfallvsligllvllYslgYmkgrlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfw.....hkteea 693 
+                             +Dglsll+++l++l+g+l++l s++ +++ +g f++ l+  l++ +G++la d++++f+FWE++ + +y+Li+ w     +  + +
+   sp|P0AFE8|NUOM_ECOLI   83 IDGLSLLMVVLTGLLGVLAVLCSWKEIEKYQGFFHLNLMWILGGVIGVFLAIDMFLFFFFWEMMLVPMYFLIALWghkasD-GKTR 167 
+                             **************************99999*****************************************888666542.3348 PP
+
+  inferred_MrpA.aligned  694 rraalkyllvtllGglalLaGilllyaa....tGsl..l.selaalaaalsppllllallLlllGfgvKsAqfPfHfWLPdAhmaA 772 
+                             + aa k++++t ++gl++L++il+l       tG +  + +el+ +  ++s+++  l++l ++++f+vK+ ++P+H+WLPdAh++A
+   sp|P0AFE8|NUOM_ECOLI  168 ITAATKFFIYTQASGLVMLIAILALVFVhynaTGVWtfNyEELLNT--PMSSGVEYLLMLGFFIAFAVKMPVVPLHGWLPDAHSQA 251 
+                             ****************999999877776666676667768888765..57888999****************************** PP
+
+  inferred_MrpA.aligned  773 PtPvSAlLSatmvKaGvyllaRllpll.g....lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp.a 852 
+                             Pt++S+ L++++ K+++y+l+R+++ l +     ++p+ ++lG+i +++Ga++A++Qtd+Krl+AY++vs++G+++++i  g+  a
+   sp|P0AFE8|NUOM_ECOLI  252 PTAGSVDLAGILLKTAAYGLLRFSLPLfPnasaEFAPIAMWLGVIGIFYGAWMAFAQTDIKRLIAYTSVSHMGFVLIAIYTGSQlA 337 
+                             *************************9997899*778**********************************************88** PP
+
+  inferred_MrpA.aligned  853 laaallhllnHalyKalLFlgaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagllgwl 937 
+                             +++a+ ++++H+l+ a+LF  +G ++ r +trd+r +gGL+ +m ++ a+ l +a +  G+P+++ Fv++++il + ++  +    
+   sp|P0AFE8|NUOM_ECOLI  338 YQGAVIQMIAHGLSAAGLFILCGQLYeRIHTRDMRMMGGLWSKMKWLPALSLFFAVATLGMPGTGNFVGEFMILFGSFQVVP---- 419 
+                             ******************************************************************************9754.... PP
+
+  inferred_MrpA.aligned  938 l..allllasaltaayflrllyrvFfgppreesak..kea.pllmllpmllLaalclllGl.Pglllgllla 1003
+                             +  ++ +++ +++ +y l +l+r++fg++++  a    +  +l  l+ +llL++l +llG+ P+++l+    
+   sp|P0AFE8|NUOM_ECOLI  420 VitVISTFGLVFASVYSLAMLHRAYFGKAKSQIASqeLPGmSLRELFMILLLVVLLVLLGFyPQPILDTSHS 491 
+                             23588888888888998999*********98654476444899999999*****************987655 PP
+
+>> sp|O05229|MRPD_BACSU  Na(+)/H(+) antiporter subunit D OS=Bacillus subtilis (strain 168) OX=224308 GN=mrpD PE=1 SV=3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  364.1  66.0  1.5e-111  3.8e-111     551    1004 ..       3     476 ..       1     491 [. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 364.1 bits;  conditional E-value: 1.5e-111
+  inferred_MrpA.aligned  551 llllllvllPllgaflllllgrrr.lrrralallallallal..vlllpl.......vv.alg.wgaglgillrvDglsllfallv 624 
+                               ++l +l+Pll a+ll ++ +   l r + ++++++ +  +  ++l+ +       ++ +lg w a++gi+l +D+++ l++l++
+   sp|O05229|MRPD_BACSU    3 NFVILPILIPLLSAILLIFMTKNLmLMRIFSTAASAIGI--VisGILV-QtvftkgiQTlSLGgWKAPYGIVLAADQFASLLVLTT 85  
+                             44678999***9999999997665433333333333222..1344443.245778974447899********************** PP
+
+  inferred_MrpA.aligned  625 sligllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtllGg 708 
+                             ++igllv lYs++  ++   +  +++   ++la+  G++l+gdL++++vF+El+ ++Sy+Li+   +t+  +r +lky++++++++
+   sp|O05229|MRPD_BACSU   86 AIIGLLVGLYSFRSVGEkrERSFYYSGVQFLLAGVSGAFLTGDLFNMYVFFELLLIASYMLIVLG-GTKIQLRESLKYIVFNIVSS 170 
+                             ***************99*9889999***************************************8.899***************** PP
+
+  inferred_MrpA.aligned  709 lalLaGilllyaatGsll.selaalaa.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlLSatmvKaGvyll 792 
+                             +++ +G+++lya tG+l+ ++l+  ++ ++ ++l++++++Llll fg K ++fP+ fWLP+ + a P+++SAl  a+++K+G+y++
+   sp|O05229|MRPD_BACSU  171 ALFVIGVGFLYAVTGTLNmADLSVKISeSGQTGLITVIGVLLLLVFGMKGGIFPLYFWLPGSYYAPPAAISALFGALLTKVGLYAI 256 
+                             *****************99**998775566778***************************************************** PP
+
+  inferred_MrpA.aligned  793 aRllpll..g...lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp.alaaallhllnHalyKalLFl 872 
+                              R+++l+  +   ++++++++l+a+t+++G++  l+ ++  +++ Y ++  +G ++ g+++ tp ++++a+++l++  l K++LF+
+   sp|O05229|MRPD_BACSU  257 TRVFTLIfiHdtaFTHQLMIWLAALTVIFGVIGSLAYSNVMKIVIYNIITAVGVILFGVAVHTPaSIQGAIYYLIHDMLIKGALFM 342 
+                             *****9996489*999********************************************************************** PP
+
+  inferred_MrpA.aligned  873 gaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagllgwll.allllasaltaayflrll 956 
+                              aG++i  tgt  + ++gGL +r P+++++f+i a slaG+Pp++GFv+K+ i e++++ g +   +  l+ll+s+l + ++lr++
+   sp|O05229|MRPD_BACSU  343 LAGTLIaLTGTASLHKMGGLIKRYPVLGWMFFISAISLAGIPPLSGFVGKFKIAEGGFAEGEF--TIsMLILLSSLLVLYSVLRIF 426 
+                             ************************************************************984..44688999999999999**** PP
+
+  inferred_MrpA.aligned  957 yrvFfgppreesak.keapllmllpmllLaalclllGl.Pglllglllaa 1004
+                              ++F+g+++e++++ ++   ++l p+++  +l+ll+Gl  +++ +++ +a
+   sp|O05229|MRPD_BACSU  427 IHAFWGEEKETPKPnHRTAKGLLYPAAIFLLLSLLFGLgTEWVSPYVDQA 476 
+                             *********9997798787789****************999995565553 PP
+
+>> sp|P60686|MNHD1_STAAU  Na(+)/H(+) antiporter subunit D1 OS=Staphylococcus aureus OX=1280 GN=mnhD1 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  339.3  58.6  4.5e-104  1.2e-103     550    1002 ..       4     478 ..       1     497 [. 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 339.3 bits;  conditional E-value: 4.5e-104
+  inferred_MrpA.aligned  550 lllllllvllPllgaflllllgrrrlrrralallallall.al.vlllpl.....vv.alg.wgaglgillrvDglsllfallvsl 626 
+                             + +l+l++++P+++a+ll+++g+r   +r +al ++l++l a+ + l+ +     +  +lg w a++ i++++D +s+l++++  +
+  sp|P60686|MNHD1_STAAU    4 SNMLVLTLVIPVITAILLVFIGKRPIIKRYVALGGTLLTLvAAiINLANVvkhgpIRvELGsWKAPYSIVFVLDIFSALLIITSII 89  
+                             56789999*************98875568888877666554554444422578885548999************************ PP
+
+  inferred_MrpA.aligned  627 igllvllYslgYmkg..rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtllGgla 710 
+                             i+++v+lYs+  ++    +  +++  l++l + +G++++gd+++lfvF+E+  +sSy+L +    t+  ++  +ky lv+++++ +
+  sp|P60686|MNHD1_STAAU   90 ITAIVILYSYQTIGIerERYYYYFSVLFMLIGIIGAFTTGDIFNLFVFFEVFLMSSYFLLVIG-STKIQLQETIKYVLVNVVSSSF 174 
+                             ************977*9888999***************************************8.8999****************** PP
+
+  inferred_MrpA.aligned  711 lLaGilllyaatGsll.selaala..a.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlLSatmvKaGvyll 792 
+                             + +G+++ly+  G+l+ ++++  +  + a +++l+ ++++L+++ f++K+++fP+ +WLP A+ a P P+ A+  a+++K+Gvy++
+  sp|P60686|MNHD1_STAAU  175 FVMGVAILYSVVGTLNlADISNKLanLsAHDSGLVNIVFILFIFVFATKAGVFPMFVWLPSAYYAPPIPIIAFFGALLTKVGVYAI 260 
+                             ***************889999988754788889***************************************************** PP
+
+  inferred_MrpA.aligned  793 aRllpll.g....lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp.alaaallhllnHalyKalLFl 872 
+                             aR l l+      + ++v++ l+++t+++G + A++  ++K+++ Y  +  +G +++g++++t  ++ +a+++ l+  l K +LFl
+  sp|P60686|MNHD1_STAAU  261 ARTLSLFfSdnvsFSHYVILFLALLTIIFGCVGAVAYANIKKIILYNVMIAVGVILVGVAMMTEsGMIGAIYYTLHDMLVKLALFL 346 
+                             *******9568997789*********************************************99********************** PP
+
+  inferred_MrpA.aligned  873 gaGaii.rtgtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagllgwll.allllasaltaay.flrl 955 
+                               G++i  tgt d+r++gGL +r P++++ f+i+alslaG+Pp++GF +K++i+++++e g++   l ++++l s l ++y ++r+
+  sp|P60686|MNHD1_STAAU  347 LIGIMIkITGTADLRQFGGLIKRYPVLGWSFFIAALSLAGIPPLSGFYGKFFIVQSTFERGFY---LsGVIVLLSSLVVLYsVIRI 429 
+                             ************************************************************985...456666666666777367** PP
+
+  inferred_MrpA.aligned  956 lyrvFfgppreesak...keapllmllpmllLaalclllGl.Pglllglll 1002
+                             +   Ffg+p+  +      ++   +   +++ +++++l Gl +  l++ + 
+  sp|P60686|MNHD1_STAAU  430 FLQGFFGQPKGYD-LnnkVDVKY-LTTIAIVAVVITVLYGLsADYLYPMVK 478 
+                             *********9865.267544455.55556677889******9988865433 PP
+
+>> sp|P0AFF0|NUON_ECOLI  NADH-quinone oxidoreductase subunit N OS=Escherichia coli (strain K12) OX=83333 GN=nuoN PE=1 SV
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  273.4  72.1   3.6e-84   9.5e-84     550    1000 ..       6     477 ..       1     484 [. 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 273.4 bits;  conditional E-value: 3.6e-84
+  inferred_MrpA.aligned  550 lllllllvllPl.lgaflllll..grrr.lrrralallallallal...vlllplvvalgwgaglgillrvDglsllfallvslig 628 
+                             + l++ll+ll + l+ ++++l   +rr+  +  +l++++l    a+   ++++  + ++g +  ++ l+rvDg+++l   lv+l +
+   sp|P0AFF0|NUON_ECOLI    6 QNLIALLPLLIVgLTVVVVMLSiaWRRNhFLNATLSVIGLN---AAlvsLWFV--G-QAG-AMDVTPLMRVDGFAMLYTGLVLLAS 84  
+                             44444444444422222222221133332223333344333...232234443..1.232.335778889**************** PP
+
+  inferred_MrpA.aligned  629 llvllYslgYmkg...rlgrffallllflaamlGlvlagdLltlfvFWEltslsSylLigfwhkteearraalkyllvtllGglal 711 
+                             l+++ +++  ++g   ++  f++l l+ + + ++l+ a++L +lf++ El sl  ++L+g+ ++++++++a++ky +++++++ +l
+   sp|P0AFF0|NUON_ECOLI   85 LATCTFAYPWLEGyndNKDEFYLLVLIAALGGILLANANHLASLFLGIELISLPLFGLVGYAFRQKRSLEASIKYTILSAAASSFL 170 
+                             ****************99*******************************************997888******************* PP
+
+  inferred_MrpA.aligned  712 LaGilllyaatGsll.selaala.a.alsppllllallLlllGfgvKsAqfPfHfWLPdAhmaAPtPvSAlLSatmvKaGvyll.a 793 
+                             L+G++l+ya++G+l+  +l+ ++    l+ plll++++L+++G+g K  ++PfH W Pd +  AP+PvS +L at  K++++++ +
+   sp|P0AFF0|NUON_ECOLI  171 LFGMALVYAQSGDLSfVALGKNLgDgMLNEPLLLAGFGLMIVGLGFKLSLVPFHLWTPDVYQGAPAPVSTFL-ATASKIAIFGVvM 255 
+                             ***********99966777776664788899*****************************************.699*****99725 PP
+
+  inferred_MrpA.aligned  794 Rllpllg.....lwgpvlavlGaitallGallAlrQtdlKrlLAYStvsQlGlmvlgiGlgtp...alaaallhllnHalyKalLF 871 
+                             Rl+++ +      +  vla+++ +++++G l+Al Qt++KrlL+YS++s+lG++++++ +  +   +++a  ++l    ++  + F
+   sp|P0AFF0|NUON_ECOLI  256 RLFLYAPvgdseAIRVVLAIIAFASIIFGNLMALSQTNIKRLLGYSSISHLGYLLVALIALQTgemSMEAVGVYLAGYLFSSLGAF 341 
+                             7776664469**8899*********************************************99*************9888888888 PP
+
+  inferred_MrpA.aligned  872 lgaGaii.rt...gtrdirelgGLgrrmPltaaafligalslaGlPpfnGFvsKelileaaleagllgwllallllasaltaayfl 953 
+                              ++  +   +   + + +   +GL+++ P++aa++++ +lslaG+P + GF++K+++l+ +++a+l +wl+++++++sa+ + y+l
+   sp|P0AFF0|NUON_ECOLI  342 GVVSLMSsPYrgpDADSLFSYRGLFWHRPILAAVMTVMMLSLAGIPMTLGFIGKFYVLAVGVQAHL-WWLVGAVVVGSAIGLYYYL 426 
+                             8777776644788889*************************************************9.599999************* PP
+
+  inferred_MrpA.aligned  954 rllyrvFfgppreesakkea.pllmllpmllL..aalclllGl.Pglllgl 1000
+                             r+   +++  p+++ ++ +  +     ++++L  a+l+l+lG+ P++l+++
+   sp|P0AFF0|NUON_ECOLI  427 RVAVSLYLHAPEQPGRDAPSnWQYSAGGIVVLisALLVLVLGVwPQPLISI 477 
+                             *********9998764433333334455555589*************9665 PP
+
+>> sp|O05259|MRPB_BACSU  Na(+)/H(+) antiporter subunit B OS=Bacillus subtilis (strain 168) OX=224308 GN=mrpB PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   84.8   5.9   2.8e-27   7.2e-27    1270    1419 ..       4     141 ..       1     143 [] 0.87
+
+  Alignments for each domain:
+  == domain 1  score: 84.8 bits;  conditional E-value: 2.8e-27
+  inferred_MrpA.aligned 1270 ikrmplsllavlrvllplallvaiaiillghnpPggGFigklilvalalllrliasgflgqlkdelrlrllppqligviilllsvp 1355
+                             +k   l+l ++++++  ++ll++++++l ghn+PggGF+g+li+ +  ++l l+a   l++++ +l l+++   + g        +
+   sp|O05259|MRPB_BACSU    4 QKTNDLILQTATKLVSFIILLFSFYLFLSGHNAPGGGFVGGLIT-SSSIVLLLLAYD-LKTVR-SL-LPVNFIYVAG--------A 77  
+                             56788999***********************************9.888777777776.56555.44.4444443344........7 PP
+
+  inferred_MrpA.aligned 1356 glllapltailsllfgapfltslggtvslpllgewnlatvmlfdlgvflvvvglvllllnrlvk 1419
+                             gllla+lt++ s++fgapflt++ g+++lp lg+ +lat+ +fdlgv+lvvvg+++++++++++
+   sp|O05259|MRPB_BACSU   78 GLLLAVLTGVGSFVFGAPFLTHTFGYFQLPILGKTELATATIFDLGVYLVVVGITMTIIQTIGE 141 
+                             **********************999**********************************98765 PP
+
+>> sp|Q9RGZ4|MRPB_ALKPO  Na(+)/H(+) antiporter subunit B OS=Alkalihalophilus pseudofirmus (strain ATCC BAA-2126 / JCM 17
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   82.4   3.3   1.5e-26   3.8e-26    1271    1418 ..       5     140 ..       1     143 [. 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 82.4 bits;  conditional E-value: 1.5e-26
+  inferred_MrpA.aligned 1271 krmplsllavlrvllplallvaiaiillghnpPggGFigklilvalalllrliasgflgqlkdelrlrllppqligviilllsvpg 1356
+                             k   ++l +++rv+  ++l+++++++++ghn PggGFig+l++ a alll ++    ++  k +  ++++ +++i+        +g
+   sp|Q9RGZ4|MRPB_ALKPO    5 KSNDVLLHTLTRVVTFIILAFSVYLFFAGHNNPGGGFIGGLMT-ASALLLMYLGFD-MRSIK-KA-IPFDFTKMIA--------FG 78  
+                             556789999*********************************9.888886666555.34444.67.99*******9........9* PP
+
+  inferred_MrpA.aligned 1357 lllapltailsllfgapfltslggtvslpllgewnlatvmlfdlgvflvvvglvllllnrlv 1418
+                             ll+a++t+   ll g+p lt   ++ ++p lge +l+t++ fdlg++lvv+g++l+++ +++
+   sp|Q9RGZ4|MRPB_ALKPO   79 LLIAIFTGFGGLLVGDPYLTQYFEYYQIPILGETELTTALPFDLGIYLVVIGIALTIILTIA 140 
+                             *********************667888************************99999987765 PP
+
+>> sp|P60678|MNHB1_STAAU  Na(+)/H(+) antiporter subunit B1 OS=Staphylococcus aureus OX=1280 GN=mnhB1 PE=1 SV=1
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   59.3   8.1   1.4e-19   3.7e-19    1272    1418 ..       5     139 ..       1     142 [] 0.86
+
+  Alignments for each domain:
+  == domain 1  score: 59.3 bits;  conditional E-value: 1.4e-19
+  inferred_MrpA.aligned 1272 rmplsllavlrvllplallvaiaiillghnpPggGFigklilvalalllrliasgflgqlkdelrlrllppqligviilllsvpgl 1357
+                             +  l+l  ++ +++ +++++ + ++l+gh  PggGF+g+l++ a  l++  ia   +++ + +  ++l+   lig        +gl
+  sp|P60678|MNHB1_STAAU    5 QNDLILQFAAVIIFFMVMVFGFSLFLAGHYTPGGGFVGGLLF-ASSLVIITIAFD-IETMR-KI-FPLDFKILIG--------IGL 78  
+                             456677777778*****************************9.999998888887.56665.66.8888887799........9** PP
+
+  inferred_MrpA.aligned 1358 llapltailsllfgapflts.lggtvslpllgewnlatvmlfdlgvflvvvglvllllnrlv 1418
+                             ++ ++t i+s+++g++f+t+ +   + l  l+ ++++t+++fd+gv ++vvg+v++++ +++
+  sp|P60678|MNHB1_STAAU   79 VFCIATPIASWFLGKNFFTHvT-FDIPLFILEPVHMTTAVFFDFGVLCAVVGTVMTIIISIG 139 
+                             ********************53.445588**************************9997765 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (1508 nodes)
+Target sequences:                         34  (10859 residues searched)
+Passed MSV filter:                        28  (0.823529); expected 0.7 (0.02)
+Passed bias filter:                       18  (0.529412); expected 0.7 (0.02)
+Passed Vit filter:                        15  (0.441176); expected 0.0 (0.001)
+Passed Fwd filter:                        13  (0.382353); expected 0.0 (1e-05)
+Initial search space (Z):                 34  [actual number of targets]
+Domain search space  (domZ):              13  [number of targets reported over threshold]
+# CPU time: 0.18u 0.01s 00:00:00.19 Elapsed: 00:00:00.19
+# Mc/sec: 82.31
+//
+[ok]
