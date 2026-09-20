@@ -13,6 +13,8 @@ For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.
 
 [inferred_MrpD.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_MrpD.hmm): HMM for the entire inferred MrpD branch of the tree (Figure 4, first ring, red).
 
+[selected_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_sodium_ATPase.hmm): HMM for the entire selected putative sodium-transporting P-type ATPases branch of the tree (Figure 3, third ring, blue).
+
 [selected_MrpA.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA.hmm): HMM for the alkaline-enriched MrpA subfamilies branch of the tree (Figure 4, third ring, light blue).
 
 [selected_MrpA_asterisk.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA_asterisk.hmm): HMM for the alkaline-enriched MrpA* subfamilies branch of the tree (Figure 4, third ring, dark blue).
