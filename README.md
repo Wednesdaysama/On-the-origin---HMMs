@@ -12,25 +12,25 @@ For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.
 Loop:
 
     for fasta in ../*.fasta
-  do
-      name=$(basename "$fasta" .fasta)
-      echo "===== Processing $name ====="
-      mmseqs createdb "$fasta" "./${name}.mmseqdb"
-      mmseqs cluster \
-          -c 0.8 \
-          --cov-mode 0 \
-          --min-seq-id 0.5 \
-          "./${name}.mmseqdb" \
-          "./${name}.clustering" \
-          "./tmp_${name}"
-      mmseqs createtsv \
-          "./${name}.mmseqdb" \
-          "./${name}.mmseqdb" \
-          "./${name}.clustering" \
-          "./${name}.clustering.tsv"
-      mv "./${name}.clustering.tsv" ../
-      echo "===== Finished $name ====="
-  done
+    do
+        name=$(basename "$fasta" .fasta)
+        echo "===== Processing $name ====="
+        mmseqs createdb "$fasta" "./${name}.mmseqdb"
+        mmseqs cluster \
+            -c 0.8 \
+            --cov-mode 0 \
+            --min-seq-id 0.5 \
+            "./${name}.mmseqdb" \
+            "./${name}.clustering" \
+            "./tmp_${name}"
+        mmseqs createtsv \
+            "./${name}.mmseqdb" \
+            "./${name}.mmseqdb" \
+            "./${name}.clustering" \
+            "./${name}.clustering.tsv"
+        mv "./${name}.clustering.tsv" ../
+        echo "===== Finished $name ====="
+    done
 
 
 
