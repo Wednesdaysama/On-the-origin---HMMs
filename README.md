@@ -2,9 +2,39 @@
 We provide the hidden Markov models (HMMs) corresponding to the different functions we defined based on the two phylogenetic trees.
 
 ### Workflow
-Eight protein sequence sets were collected. These included three **inferred** functions: putative sodium-transporting P-type ATPases, MrpA, and MrpD (the first ring of each phylogenetic tree). We also **selected** five alkaline-enriched subfamilies, namely putative sodium-transporting P-type ATPases, MrpA, MrpA, MrpD, and MrpD (from the third ring of each phylogenetic tree).
+15 protein sequence sets (in FASTA format) were collected. These included 10 **inferred** functions: putative sodium-transporting P-type ATPases, Potassium-transporting_ATPase_ATP-binding_subunit, Magnesium-transporting_ATPase, Zinc_cadmium_lead_cobalt-transporting_P-type_ATPase, Copper-exporting_P-type_ATPase, MrpA, and MrpD (the first ring of each phylogenetic tree). We also **selected** five alkaline-enriched subfamilies, namely putative sodium-transporting P-type ATPases, MrpA, MrpA, MrpD, and MrpD (from the third ring of each phylogenetic tree).
 
-For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. We retained representative sequences and aligned them with Clustal Omega, then built HMMs with hmmbuild. We then evaluated the resulting models and report the summary statistics.
+For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
+
+  mkdir mmseq2
+  cd mmseq2
+
+Loop:
+
+  for fasta in ../*.fasta
+  do
+      name=$(basename "$fasta" .fasta)
+      echo "===== Processing $name ====="
+      mmseqs createdb "$fasta" "./${name}.mmseqdb"
+      mmseqs cluster \
+          -c 0.8 \
+          --cov-mode 0 \
+          --min-seq-id 0.5 \
+          "./${name}.mmseqdb" \
+          "./${name}.clustering" \
+          "./tmp_${name}"
+      mmseqs createtsv \
+          "./${name}.mmseqdb" \
+          "./${name}.mmseqdb" \
+          "./${name}.clustering" \
+          "./${name}.clustering.tsv"
+      mv "./${name}.clustering.tsv" ../
+      echo "===== Finished $name ====="
+  done
+
+
+
+We retained representative sequences and aligned them with Clustal Omega, then built HMMs with hmmbuild. We then evaluated the resulting models and report the summary statistics.
 
 ### HMMs
 [inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
