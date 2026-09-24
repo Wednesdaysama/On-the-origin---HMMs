@@ -5,12 +5,10 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 15 protein sequence sets (in FASTA format) were collected. These included 10 **inferred** functions: putative sodium-transporting P-type ATPases, Potassium-transporting_ATPase_ATP-binding_subunit, Magnesium-transporting_ATPase, Zinc_cadmium_lead_cobalt-transporting_P-type_ATPase, Copper-exporting_P-type_ATPase, MrpA, and MrpD (the first ring of each phylogenetic tree). We also **selected** five alkaline-enriched subfamilies, namely putative sodium-transporting P-type ATPases, MrpA, MrpA, MrpD, and MrpD (from the third ring of each phylogenetic tree).
 
 #### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
-
-    mkdir mmseq2
-    cd mmseq2
-
 Loop:
 
+    mkdir -p mmseq2
+    cd mmseq2
     for fasta in ../*.fasta
     do
         name=$(basename "$fasta" .fasta)
