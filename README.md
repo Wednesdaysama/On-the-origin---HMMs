@@ -4,7 +4,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 ### Workflow
 15 protein sequence sets (in FASTA format) were collected. These included 10 **inferred** functions: putative sodium-transporting P-type ATPases, Potassium-transporting_ATPase_ATP-binding_subunit, Magnesium-transporting_ATPase, Zinc_cadmium_lead_cobalt-transporting_P-type_ATPase, Copper-exporting_P-type_ATPase, MrpA, and MrpD (the first ring of each phylogenetic tree). We also **selected** five alkaline-enriched subfamilies, namely putative sodium-transporting P-type ATPases, MrpA, MrpA, MrpD, and MrpD (from the third ring of each phylogenetic tree).
 
-For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
+#### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
 
     mkdir mmseq2
     cd mmseq2
@@ -32,7 +32,53 @@ Loop:
         echo "===== Finished $name ====="
     done
 
+#### 2. For each *.clustering.tsv of protein set, randomly selecting 90% of clusters, and putting all the sequences within that cluster to *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
 
+    mkdir -p test build_hmm
+    for fasta in *.fasta
+    do
+        name=$(basename "$fasta" .fasta)
+        tsv="${name}.clustering.tsv"
+        
+        echo "===== Processing $name ====="
+        cut -f1 "$tsv" | sort -u > "${name}.representatives.txt"  # grep IDs of all cluster representatives
+        shuf "${name}.representatives.txt" > "${name}.representatives.shuffled.txt"  # randomly shuffle clusters
+        total_clusters=$(wc -l < "${name}.representatives.shuffled.txt")
+
+    # 90% for build_hmm
+        n_train=$(( total_clusters * 90 / 100 ))  
+        head -n "$n_train" "${name}.representatives.shuffled.txt" \
+            > "${name}.build_hmm.clusters"
+        tail -n "+$((n_train + 1))" "${name}.representatives.shuffled.txt" \
+            > "${name}.test.clusters"
+
+        awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.build_hmm.clusters" "$tsv" > "${name}.build_hmm.ids"
+        awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.test.clusters" "$tsv" > "${name}.test.ids"
+        
+        seqkit grep -f "${name}.build_hmm.ids" "$fasta" > "build_hmm/${name}.fasta"  # grep sequences from the FASTA file
+        seqkit grep -f "${name}.test.ids" "$fasta" > "test/${name}.fasta"
+            
+        train_clusters=$(wc -l < "${name}.build_hmm.clusters")
+        test_clusters=$(wc -l < "${name}.test.clusters")
+        train_sequences=$(wc -l < "${name}.build_hmm.ids")
+        test_sequences=$(wc -l < "${name}.test.ids")
+
+        echo "Total clusters:       $total_clusters"
+        echo "Build HMM clusters:   $train_clusters"
+        echo "Test clusters:        $test_clusters"
+        echo "Build HMM sequences:  $train_sequences"
+        echo "Test sequences:       $test_sequences"
+        
+        rm "${name}.representatives.txt" \
+           "${name}.representatives.shuffled.txt" \
+           "${name}.build_hmm.clusters" \
+           "${name}.test.clusters" \
+           "${name}.build_hmm.ids" \
+           "${name}.test.ids"
+        echo "===== Finished $name ====="
+        echo
+    done
+    
 
 We retained representative sequences and aligned them with Clustal Omega, then built HMMs with hmmbuild. We then evaluated the resulting models and report the summary statistics.
 
