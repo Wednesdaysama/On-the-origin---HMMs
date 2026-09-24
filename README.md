@@ -6,12 +6,12 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 
 For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
 
-  mkdir mmseq2
-  cd mmseq2
+    mkdir mmseq2
+    cd mmseq2
 
 Loop:
 
-  for fasta in ../*.fasta
+    for fasta in ../*.fasta
   do
       name=$(basename "$fasta" .fasta)
       echo "===== Processing $name ====="
