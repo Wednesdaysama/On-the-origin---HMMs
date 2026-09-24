@@ -82,7 +82,7 @@ Loop:
         name=$(basename "$fasta" .fasta)
         echo "===== processing $name ====="
         clustalo -i "$fasta" -o "./build_hmm/${name}.aligned.fasta" --force -v
-        hmmbuild "./hmm/${name}.hmm" "./build_hmm/${name}.aligned.fasta"
+        hmmbuild "./build_hmm/hmm/${name}.hmm" "./build_hmm/${name}.aligned.fasta"
         echo "===== finished $name ====="
     done
 
