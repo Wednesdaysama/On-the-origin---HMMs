@@ -76,11 +76,12 @@ Loop:
     
 #### 3. For *.fasta in ./build_hmm, align them with Clustal Omega, then build HMMs with hmmbuild. 
 
+    mkdir -p ./build_hmm/hmm
     for fasta in ./build_hmm/*.fasta
     do
         name=$(basename "$fasta" .fasta)
         echo "===== processing $name ====="
-        clustalo -i "$fasta" -o "./build_hmm/${name}.aligned.fasta" --force
+        clustalo -i "$fasta" -o "./build_hmm/${name}.aligned.fasta" --force -v
         hmmbuild "./hmm/${name}.hmm" "./build_hmm/${name}.aligned.fasta"
         echo "===== finished $name ====="
     done
