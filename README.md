@@ -14,7 +14,7 @@ Loop:
     for fasta in ../*.fasta
     do
         name=$(basename "$fasta" .fasta)
-        echo "===== Processing $name ====="
+        echo "===== processing $name ====="
         mmseqs createdb "$fasta" "./${name}.mmseqdb"
         mmseqs cluster \
             -c 0.8 \
@@ -29,10 +29,10 @@ Loop:
             "./${name}.clustering" \
             "./${name}.clustering.tsv"
         mv "./${name}.clustering.tsv" ../
-        echo "===== Finished $name ====="
+        echo "===== finished $name ====="
     done
 
-#### 2. For each *.clustering.tsv of protein set, randomly selecting 90% of clusters, and putting all the sequences within that cluster to *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
+#### 2. For each *.clustering.tsv of protein set, randomly select 90% of clusters, and put all the sequences within those clusters into *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
 
     mkdir -p test build_hmm
     for fasta in *.fasta
@@ -40,18 +40,15 @@ Loop:
         name=$(basename "$fasta" .fasta)
         tsv="${name}.clustering.tsv"
         
-        echo "===== Processing $name ====="
+        echo "===== processing $name ====="
         cut -f1 "$tsv" | sort -u > "${name}.representatives.txt"  # grep IDs of all cluster representatives
         shuf "${name}.representatives.txt" > "${name}.representatives.shuffled.txt"  # randomly shuffle clusters
         total_clusters=$(wc -l < "${name}.representatives.shuffled.txt")
 
-    # 90% for build_hmm
-        n_train=$(( total_clusters * 90 / 100 ))  
-        head -n "$n_train" "${name}.representatives.shuffled.txt" \
-            > "${name}.build_hmm.clusters"
-        tail -n "+$((n_train + 1))" "${name}.representatives.shuffled.txt" \
-            > "${name}.test.clusters"
-
+        n_train=$(( total_clusters * 90 / 100 ))  # 90% for build_hmm
+        head -n "$n_train" "${name}.representatives.shuffled.txt" > "${name}.build_hmm.clusters"
+        tail -n "+$((n_train + 1))" "${name}.representatives.shuffled.txt" > "${name}.test.clusters"
+            
         awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.build_hmm.clusters" "$tsv" > "${name}.build_hmm.ids"
         awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.test.clusters" "$tsv" > "${name}.test.ids"
         
@@ -75,12 +72,24 @@ Loop:
            "${name}.test.clusters" \
            "${name}.build_hmm.ids" \
            "${name}.test.ids"
-        echo "===== Finished $name ====="
+        echo "===== finished $name ====="
         echo
     done
     
+#### 3. For *.fasta in ./build_hmm, align them with Clustal Omega, then build HMMs with hmmbuild. 
 
-We retained representative sequences and aligned them with Clustal Omega, then built HMMs with hmmbuild. We then evaluated the resulting models and report the summary statistics.
+    for fasta in ./build_hmm/*.fasta
+    do
+        name=$(basename "$fasta" .fasta)
+        echo "===== processing $name ====="
+        clustalo -i "$fasta" -o "./build_hmm/${name}.aligned.fasta" --force
+        hmmbuild "./hmm/${name}.hmm" "./build_hmm/${name}.aligned.fasta"
+        echo "===== finished $name ====="
+    done
+
+
+
+We then evaluated the resulting models and report the summary statistics.
 
 ### HMMs
 [inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
