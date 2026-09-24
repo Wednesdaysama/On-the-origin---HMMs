@@ -74,7 +74,7 @@ Loop:
         echo
     done
     
-#### 3. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild. 
+#### 3. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
     mkdir -p ./build_hmm/hmm
     for fasta in ./build_hmm/*.fasta
