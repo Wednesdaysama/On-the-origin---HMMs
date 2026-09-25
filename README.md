@@ -86,9 +86,22 @@ Loop:
         echo "===== finished $name ====="
     done
 
+#### 4. Check the test sequences with *hmmsearch*
 
+    mkdir -p ./test/hmm_results
+    for fasta in ./test/*.fasta
+    do
+        test_name=$(basename "$fasta" .fasta)
+        for hmm in ./build_hmm/hmm/*.hmm
+        do
+            hmm_name=$(basename "$hmm" .hmm)
+            echo "===== $test_name vs $hmm_name ====="
+            hmmsearch \
+                --tblout "./test/hmm_results/${test_name}__vs__${hmm_name}.tbl" \
+                "$hmm" "$fasta" > "./test/hmm_results/${test_name}__vs__${hmm_name}.out"
+        done
+    done
 
-We then evaluated the resulting models and report the summary statistics.
 
 ### HMMs
 [inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
