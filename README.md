@@ -28,7 +28,7 @@ Loop:
 
     mkdir -p mmseq2
     cd mmseq2
-    for fasta in ../*.fasta
+    for fasta in ../complete/*.fasta
     do
         name=$(basename "$fasta" .fasta)
         echo "===== processing $name ====="
