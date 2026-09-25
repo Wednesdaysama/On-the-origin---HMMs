@@ -51,8 +51,9 @@ Loop:
 
 #### 2. For each *.clustering.tsv of protein set, randomly select 90% of clusters, and put all the sequences within those clusters into *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
 
+    cd ../
     mkdir -p test build_hmm
-    for fasta in *.fasta
+    for fasta in ./complete/*.fasta
     do
         name=$(basename "$fasta" .fasta)
         tsv="${name}.clustering.tsv"
