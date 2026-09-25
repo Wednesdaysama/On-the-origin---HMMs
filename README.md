@@ -86,7 +86,7 @@ Loop:
         echo "===== finished $name ====="
     done
 
-#### 4. Check the test sequences with *hmmsearch*
+#### 4. For each .fasta in *test*, check the test sequences with *hmmsearch*
 
     mkdir -p ./test/hmm_results
     for fasta in ./test/*.fasta
