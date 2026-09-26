@@ -63,7 +63,7 @@ Loop:
         shuf "${name}.representatives.txt" > "${name}.representatives.shuffled.txt"  # randomly shuffle clusters
         total_clusters=$(wc -l < "${name}.representatives.shuffled.txt")
 
-        n_train=$(( total_clusters * 80 / 100 ))  # 80% for build_hmm
+        n_train=$(( total_clusters * 90 / 100 ))  # 90% for build_hmm
         head -n "$n_train" "${name}.representatives.shuffled.txt" > "${name}.build_hmm.clusters"
         tail -n "+$((n_train + 1))" "${name}.representatives.shuffled.txt" > "${name}.test.clusters"
             
