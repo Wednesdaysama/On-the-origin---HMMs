@@ -36,7 +36,7 @@ Loop:
         mmseqs cluster \
             -c 0.8 \
             --cov-mode 0 \
-            --min-seq-id 0.35 \
+            --min-seq-id 0.4 \
             "./${name}.mmseqdb" \
             "./${name}.clustering" \
             "./tmp_${name}"
