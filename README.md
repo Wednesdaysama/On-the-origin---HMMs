@@ -96,6 +96,7 @@ Loop:
 
 Alternatively, only using representative sequences:
 
+    cd ..
     mkdir -p test build_hmm
 
     for fasta in ./complete/*.fasta
