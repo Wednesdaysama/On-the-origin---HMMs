@@ -93,7 +93,67 @@ Loop:
         echo "===== finished $name ====="
         echo
     done
-    
+
+Alternatively, only using representative sequences:
+
+    mkdir -p test build_hmm
+
+    for fasta in ./complete/*.fasta
+    do
+        name=$(basename "$fasta" .fasta)
+        tsv="${name}.clustering.tsv"
+
+        echo "===== processing $name ====="
+        cut -f1 "$tsv" | sort -u > "${name}.representatives.txt"
+
+        shuf "${name}.representatives.txt" \
+            > "${name}.representatives.shuffled.txt"
+
+        total_representatives=$(
+            wc -l < "${name}.representatives.shuffled.txt"
+        )
+
+        n_train=$(( total_representatives * 90 / 100 ))
+        head -n "$n_train" \
+            "${name}.representatives.shuffled.txt" \
+            > "${name}.build_hmm.ids"
+
+        tail -n "+$((n_train + 1))" \
+            "${name}.representatives.shuffled.txt" \
+            > "${name}.test.ids"
+        seqkit grep \
+            -f "${name}.build_hmm.ids" \
+            "$fasta" \
+            > "build_hmm/${name}.fasta"
+
+        seqkit grep \
+            -f "${name}.test.ids" \
+            "$fasta" \
+            > "test/${name}.fasta"
+
+        train_sequences=$(
+            grep -c "^>" "build_hmm/${name}.fasta"
+        )
+
+        test_sequences=$(
+            grep -c "^>" "test/${name}.fasta"
+        )
+
+        echo "Total representatives: $total_representatives"
+        echo "Build HMM sequences:   $train_sequences"
+        echo "Test sequences:        $test_sequences"
+
+        rm \
+            "${name}.representatives.txt" \
+            "${name}.representatives.shuffled.txt" \
+            "${name}.build_hmm.ids" \
+            "${name}.test.ids"
+
+        echo "===== finished $name ====="
+        echo
+    done
+
+
 #### 3. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
     mkdir -p ./build_hmm/hmm
