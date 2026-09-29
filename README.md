@@ -21,6 +21,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
         ' "$fasta" > "./complete/$name"
         echo "Finished: $name"
     done
+    cd ..
 
 
 #### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
