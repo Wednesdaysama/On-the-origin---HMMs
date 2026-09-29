@@ -24,7 +24,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
     
 
 
-#### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
+#### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.8*. 
 Loop:
 
     mkdir -p mmseq2
@@ -37,7 +37,7 @@ Loop:
         mmseqs cluster \
             -c 0.8 \
             --cov-mode 0 \
-            --min-seq-id 0.5 \
+            --min-seq-id 0.8 \
             "./${name}.mmseqdb" \
             "./${name}.clustering" \
             "./tmp_${name}"
@@ -96,67 +96,6 @@ Loop:
         echo
     done
 
-Alternatively, only using representative sequences:
-
-    cd ..
-    mkdir -p test build_hmm
-
-    for fasta in ./complete/*.fasta
-    do
-        name=$(basename "$fasta" .fasta)
-        tsv="${name}.clustering.tsv"
-
-        echo "===== processing $name ====="
-        cut -f1 "$tsv" | sort -u > "${name}.representatives.txt"
-
-        shuf "${name}.representatives.txt" \
-            > "${name}.representatives.shuffled.txt"
-
-        total_representatives=$(
-            wc -l < "${name}.representatives.shuffled.txt"
-        )
-
-        n_train=$(( total_representatives * 90 / 100 ))
-        head -n "$n_train" \
-            "${name}.representatives.shuffled.txt" \
-            > "${name}.build_hmm.ids"
-
-        tail -n "+$((n_train + 1))" \
-            "${name}.representatives.shuffled.txt" \
-            > "${name}.test.ids"
-        seqkit grep \
-            -f "${name}.build_hmm.ids" \
-            "$fasta" \
-            > "build_hmm/${name}.fasta"
-
-        seqkit grep \
-            -f "${name}.test.ids" \
-            "$fasta" \
-            > "test/${name}.fasta"
-
-        train_sequences=$(
-            grep -c "^>" "build_hmm/${name}.fasta"
-        )
-
-        test_sequences=$(
-            grep -c "^>" "test/${name}.fasta"
-        )
-
-        echo "Total representatives: $total_representatives"
-        echo "Build HMM sequences:   $train_sequences"
-        echo "Test sequences:        $test_sequences"
-
-        rm \
-            "${name}.representatives.txt" \
-            "${name}.representatives.shuffled.txt" \
-            "${name}.build_hmm.ids" \
-            "${name}.test.ids"
-
-        echo "===== finished $name ====="
-        echo
-    done
-
-
 #### 3. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
     mkdir -p ./build_hmm/hmm
@@ -185,43 +124,25 @@ Alternatively, only using representative sequences:
         done
     done
 
+#### 5. Data summary
+
     python hmm_results_new.py
 
 
+Results
+
+| model | TP | FP | TN | FN | precision | recall | false_positive_rate | false_negative_rate | lowest_true_score | highest_false_score | lowest_true_relative_score | highest_false_relative_score | relative_score_separation | relative_score_cutoff |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| selected_MrpA | 37 | 4 | 1876 | 0 | 90.2% | 1 | 0.2% | 0 | 581.9 | 1011.7 | 182.9 | 205 | -22.1 | |
+| selected_MrpA_ast | 43 | 13 | 1861 | 0 | 76.8% | 1 | 0.7% | 0 | 452.4 | 711.2 | 45.4 | 55.4 | -10 | |
+| selected_MrpD | 36 | 12 | 1869 | 0 | 75.0% | 1 | 0.6% | 0 | 655.6 | 659.2 | 152.4 | 70.3 | 82.1 | 111.35 |
+| selected_MrpD_ast | 31 | 1 | 1885 | 0 | 96.9% | 1 | 0.1% | 0 | 434.8 | 481.8 | 204.1 | 48.7 | 155.4 | 126.4 |
+| selected_Putative_sodium-transporting_P-type_ATPase | 46 | 17 | 1854 | 0 | 73.0% | 1 | 0.9% | 0 | 1470.6 | 1522.5 | 189.4 | 119.9 | 69.5 | 154.65 |
+
+There is no good cutoff when separating the selected_MrpA/inferred_MrpA and selected_MrpA_ast/inferred_MrpA. 
+ALL false positive of selected_MrpA and selected_MrpA_ast sequences were belong to the inferred_MrpA.
+So we performed a sliding-window optimization to identify a region that can distinguish selected_MrpA (selected_MrpA_ast) from inferred_MrpA.
 
 
-### HMMs
-[inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
 
-[inferred_MrpA.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_MrpA.hmm): HMM for the entire inferred MrpA branch of the tree (Figure 4, first ring, orange).
-
-[inferred_MrpD.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_MrpD.hmm): HMM for the entire inferred MrpD branch of the tree (Figure 4, first ring, red).
-
-[selected_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_sodium_ATPase.hmm): HMM for the entire selected putative sodium-transporting P-type ATPases branch of the tree (Figure 3, third ring, blue).
-
-[selected_MrpA.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA.hmm): HMM for the alkaline-enriched MrpA subfamilies branch of the tree (Figure 4, third ring, light blue).
-
-[selected_MrpA_asterisk.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpA_asterisk.hmm): HMM for the alkaline-enriched MrpA* subfamilies branch of the tree (Figure 4, third ring, dark blue).
-
-[selected_MrpD.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpD.hmm): HMM for the alkaline-enriched MrpD subfamilies branch of the tree (Figure 4, third ring, brown).
-
-[selected_MrpD_asterisk.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/selected_MrpD_asterisk.hmm): HMM for the alkaline-enriched MrpD* subfamilies branch of the tree (Figure 4, third ring, purple).
-
-### HMM report
-
-| Model | seq | Eff_nseq | M | relent | info | p |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| inferred_MrpA.hmm | 477 | 49.38 | 1508 | 0.59 | 0.63 | 0.37 |
-| inferred_MrpD.hmm | 453 | 18.54 | 1225 | 0.59 | 0.63 | 0.44 |
-| inferred_sodium_ATPase.hmm | 275 | 15.30 | 1712 | 0.59 | 0.63 | 0.50 |
-| selected_MrpA.hmm | 61 | 3.01 | 777 | 0.59 | 0.61 | 0.52 |
-| selected_MrpA_asterisk.hmm | 22 | 5.34 | 1141 | 0.59 | 0.61 | 0.51 |
-| selected_MrpD.hmm | 29 | 2.71 | 498 | 0.59 | 0.62 | 0.54 |
-| selected_MrpD_asterisk.hmm | 106 | 6.14 | 1058 | 0.59 | 0.63 | 0.49 |
-| selected_sodium_ATPase.hmm | 25 | 3.60 | 1912 | 0.59 | 0.62 | 0.52 |
-
-### Test
-Demo data can be found [here](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/sample.fasta). 
-
-Results can be found [here](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/results.txt). 
 
