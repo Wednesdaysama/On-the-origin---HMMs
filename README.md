@@ -147,7 +147,7 @@ Therefore, we performed a sliding-window optimization to identify a region that 
 
 The optimization was performed separately for selected_MrpA versus inferred_MrpA and selected_MrpA_ast versus inferred_MrpA. For each comparison, sequences in the HMM-building sets of the target and inferred_MrpA classes were combined and aligned using Clustal Omega. Sliding windows of 100, 150, 200, 250, and 300 alignment columns were evaluated at 25-column intervals. Windows with excessive gaps or insufficient sequence coverage were excluded before HMM construction. For each retained window, separate profile HMMs were constructed from the target and inferred_MrpA training sequences using HMMER and evaluated against the corresponding independent test sequences.
 
-Results of selected_MrpA_ast vs inferred_MrpA
+[Results of selected_MrpA_ast vs inferred_MrpA](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/selected_MrpA_ast_vs_MrpA_optimization.xlsx)
 
 | rank | region | window_size | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -157,7 +157,7 @@ Results of selected_MrpA_ast vs inferred_MrpA
 | 4 | 1301_1600 | 300 | 14.4 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 19 | 9.8 | 9.2 |
 | 5 | 1276_1525 | 250 | 16.45 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 20.3 | 12.6 | 7.7 |
 
-Results of selected_MrpA vs inferred_MrpA
+[Results of selected_MrpA vs inferred_MrpA](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/selected_MrpA_vs_MrpA_optimization.xlsx)
 
 | rank | region | window_size | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
