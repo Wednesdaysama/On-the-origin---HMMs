@@ -21,7 +21,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
         ' "$fasta" > "./complete/$name"
         echo "Finished: $name"
     done
-    cd ..
+    
 
 
 #### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.5*. 
@@ -49,6 +49,7 @@ Loop:
         mv "./${name}.clustering.tsv" ../
         echo "===== finished $name ====="
     done
+    cd ..
 
 #### 2. For each *.clustering.tsv of protein set, randomly select 90% of clusters, and put all the sequences within those clusters into *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
 
