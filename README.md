@@ -139,7 +139,7 @@ Loop:
 | selected_MrpD_ast | 31 | 1 | 1885 | 0 | 96.9% | 1 | 0.1% | 0 | 434.8 | 481.8 | 204.1 | 48.7 | 155.4 | 126.4 |
 | selected_Putative_sodium-transporting_P-type_ATPase | 46 | 17 | 1854 | 0 | 73.0% | 1 | 0.9% | 0 | 1470.6 | 1522.5 | 189.4 | 119.9 | 69.5 | 154.65 |
 
-For each sequence, the relative score was calculated as the difference between the bit score of the target HMM and the highest bit score among all competing HMMs. A sequence was classified as the corresponding selected subfamily when its relative score was greater than or equal to the model-specific relative-score cutoff.
+For each sequence, the relative score was calculated as the difference between the bit score of the target HMM and the highest bit score among all competing HMMs. A sequence was classified as the corresponding selected subfamily when its relative score was greater than or equal to the model-specific relative score cutoff.
 
 There is no clear cutoff for distinguishing selected_MrpA and selected_MrpA_ast from inferred_MrpA. 
 Notably, all false positives for selected_MrpA and selected_MrpA_ast belonged to inferred_MrpA. 
