@@ -1,4 +1,4 @@
-<img width="196" height="25" alt="image" src="https://github.com/user-attachments/assets/5b45aed1-f838-4bf2-9063-69861e7ce857" /># On the origin - HMMs
+# On the origin - HMMs
 We provide the hidden Markov models (HMMs) corresponding to the different functions we defined based on the two phylogenetic trees.
 
 ### Workflow
