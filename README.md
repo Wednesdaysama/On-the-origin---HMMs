@@ -185,7 +185,11 @@ Alternatively, only using representative sequences:
         done
     done
 
-Run hmm_results.py
+    python hmm_results_new.py
+
+
+
+
 ### HMMs
 [inferred_sodium_ATPase.hmm](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/inferred_sodium_ATPase.hmm): HMM for the entire inferred putative sodium-transporting P-type ATPases branch of the tree (Figure 3, first ring, orange).
 
