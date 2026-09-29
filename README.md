@@ -149,23 +149,23 @@ The optimization was performed separately for selected_MrpA versus inferred_MrpA
 
 Results of selected_MrpA_ast vs inferred_MrpA
 
-| rank | region | window_size | gap_fraction | median_non_gap_aa | p10_non_gap_aa | mean_non_gap_aa | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | 1251_1550 | 300 | 0.76962963 | 71 | 63 | 69.11111111 | 14.05 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 21.2 | 6.9 | 14.3 |
-| 2 | 1326_1575 | 250 | 0.676444444 | 83 | 76 | 80.88888889 | 15.6 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 22.7 | 8.5 | 14.2 |
-| 3 | 1301_1550 | 250 | 0.723555556 | 71 | 63 | 69.11111111 | 14.2 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 21.2 | 7.2 | 14 |
-| 4 | 1301_1600 | 300 | 0.723006029 | 85 | 78 | 83.09819121 | 14.4 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 19 | 9.8 | 9.2 |
-| 5 | 1276_1525 | 250 | 0.754377261 | 62 | 57 | 61.40568475 | 16.45 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 20.3 | 12.6 | 7.7 |
+| rank | region | window_size | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 1251_1550 | 300 | 14.05 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 21.2 | 6.9 | 14.3 |
+| 2 | 1326_1575 | 250 | 15.6 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 22.7 | 8.5 | 14.2 |
+| 3 | 1301_1550 | 250 | 14.2 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 21.2 | 7.2 | 14 |
+| 4 | 1301_1600 | 300 | 14.4 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 19 | 9.8 | 9.2 |
+| 5 | 1276_1525 | 250 | 16.45 | 43 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 20.3 | 12.6 | 7.7 |
 
 Results of selected_MrpA vs inferred_MrpA
 
-| rank | region | window_size | gap_fraction | median_non_gap_aa | p10_non_gap_aa | mean_non_gap_aa | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | 1526_1675 | 150 | 0.618282209 | 58 | 58 | 57.25766871 | 21.95 | 37 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 22.1 | 21.8 | 0.3 |
-| 2 | 1526_1825 | 300 | 0.62597137 | 114 | 113 | 112.208589 | 25.15 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 25.4 | 26.7 | -1.3 |
-| 3 | 1551_1650 | 100 | 0.556932515 | 45 | 44 | 44.30674847 | 11.35 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 12.3 | 15 | -2.7 |
-| 4 | 1676_1925 | 250 | 0.688392638 | 80 | 75 | 77.90184049 | 17.95 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 21.8 | 24.8 | -3 |
-| 5 | 1526_1625 | 100 | 0.547331288 | 46 | 45 | 45.26687117 | 11.25 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 12.2 | 15.3 | -3.1 |
+| rank | region | window_size | cutoff | TP | FP | TN | FN | precision | recall | FPR | F1 | lowest_true_relative_score | highest_false_relative_score | relative_score_separation |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 1526_1675 | 150 | 21.95 | 37 | 0 | 205 | 0 | 1 | 1 | 0 | 1 | 22.1 | 21.8 | 0.3 |
+| 2 | 1526_1825 | 300 | 25.15 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 25.4 | 26.7 | -1.3 |
+| 3 | 1551_1650 | 100 | 11.35 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 12.3 | 15 | -2.7 |
+| 4 | 1676_1925 | 250 | 17.95 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 21.8 | 24.8 | -3 |
+| 5 | 1526_1625 | 100 | 11.25 | 37 | 1 | 204 | 0 | 0.973684211 | 1 | 0.004878049 | 0.986666667 | 12.2 | 15.3 | -3.1 |
 
 
 For selected_MrpA_ast, the optimal window corresponded to alignment columns 1251–1550. The lowest relative score among selected_MrpA_ast sequences was 21.2, whereas the highest relative score among inferred_MrpA sequences was 6.9, giving a relative-score cutoff of **14.05**. For selected_MrpA, the optimal window corresponded to alignment columns 1526–1675, with a lowest true relative score of 22.1 and a highest false relative score of 21.8, giving a cutoff of **21.95**. Sequences with relative scores greater than or equal to the corresponding cutoff were classified as selected_MrpA_ast or selected_MrpA, respectively; sequences below the cutoff were classified as inferred_MrpA.
