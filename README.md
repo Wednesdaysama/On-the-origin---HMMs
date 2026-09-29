@@ -129,7 +129,7 @@ Loop:
     python hmm_results_new.py
 
 
-Results
+[Results](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_validation_scores_0.8.xlsx)
 
 | model | TP | FP | TN | FN | precision | recall | false_positive_rate | false_negative_rate | lowest_true_score | highest_false_score | lowest_true_relative_score | highest_false_relative_score | relative_score_separation | relative_score_cutoff |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
