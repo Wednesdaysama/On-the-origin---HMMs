@@ -24,7 +24,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
     
 
 
-#### 1. For each .fasta in *complete*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
+#### 2. For each .fasta in *complete*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
     for fasta in ./*.fasta
     do
@@ -35,20 +35,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
         echo "===== finished $name ====="
     done
 
-#### 2. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
-
-    mkdir -p ./build_hmm/hmm
-    for fasta in ./build_hmm/*.fasta
-    do
-        name=$(basename "$fasta" .fasta)
-        echo "===== processing $name ====="
-        clustalo -i "$fasta" -o "./build_hmm/${name}.aligned.fasta" --force -v
-        hmmbuild "./build_hmm/hmm/${name}.hmm" "./build_hmm/${name}.aligned.fasta"
-        echo "===== finished $name ====="
-    done
-
-#### 3. According to true positive and false positive sequences, calculate cutoff for HMMs
-
+#### 3. Run HMMs against all sequences
     mkdir -p ./hmm_results
     for fasta in ./*.fasta
     do
@@ -62,6 +49,9 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
                 "$hmm" "$fasta" > "./hmm_results/${test_name}__vs__${hmm_name}.out"
         done
     done
+
+#### 4. According to the true positive and false positive sequences, calculate the cutoff for each HMM
+
 
 #### 5. Data summary
 
