@@ -39,6 +39,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
     mkdir -p ./hmm_results
     for fasta in ./*.fasta
     do
+        [[ "$fasta" == *aligned* ]] && continue
         test_name=$(basename "$fasta" .fasta)
         for hmm in ./hmm/*.hmm
         do
