@@ -24,79 +24,18 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
     
 
 
-#### 1. For each protein set, we reduced redundancy using MMseqs2 with parameters *-c 0.8 --cov-mode 0 --min-seq-id 0.8*. 
-Loop:
+#### 1. For each .fasta in *complete*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
-    mkdir -p mmseq2
-    cd mmseq2
-    for fasta in ../complete/*.fasta
+    for fasta in ./*.fasta
     do
         name=$(basename "$fasta" .fasta)
         echo "===== processing $name ====="
-        mmseqs createdb "$fasta" "./${name}.mmseqdb"
-        mmseqs cluster \
-            -c 0.8 \
-            --cov-mode 0 \
-            --min-seq-id 0.8 \
-            "./${name}.mmseqdb" \
-            "./${name}.clustering" \
-            "./tmp_${name}"
-        mmseqs createtsv \
-            "./${name}.mmseqdb" \
-            "./${name}.mmseqdb" \
-            "./${name}.clustering" \
-            "./${name}.clustering.tsv"
-        mv "./${name}.clustering.tsv" ../
+        clustalo -i "$fasta" -o "./${name}.aligned.fasta" --force -v
+        hmmbuild "./hmm/${name}.hmm" "./${name}.aligned.fasta"
         echo "===== finished $name ====="
     done
-    cd ..
 
-#### 2. For each *.clustering.tsv of protein set, randomly select 90% of clusters, and put all the sequences within those clusters into *build_hmm*. The remaining 10% of clusters with their corresponding sequences were moved to *test*
-
-    cd ../
-    mkdir -p test build_hmm
-    for fasta in ./complete/*.fasta
-    do
-        name=$(basename "$fasta" .fasta)
-        tsv="${name}.clustering.tsv"
-        
-        echo "===== processing $name ====="
-        cut -f1 "$tsv" | sort -u > "${name}.representatives.txt"  # grep IDs of all cluster representatives
-        shuf "${name}.representatives.txt" > "${name}.representatives.shuffled.txt"  # randomly shuffle clusters
-        total_clusters=$(wc -l < "${name}.representatives.shuffled.txt")
-
-        n_train=$(( total_clusters * 90 / 100 ))  # 90% for build_hmm
-        head -n "$n_train" "${name}.representatives.shuffled.txt" > "${name}.build_hmm.clusters"
-        tail -n "+$((n_train + 1))" "${name}.representatives.shuffled.txt" > "${name}.test.clusters"
-            
-        awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.build_hmm.clusters" "$tsv" > "${name}.build_hmm.ids"
-        awk 'NR==FNR {a[$1]; next} $1 in a {print $2}' "${name}.test.clusters" "$tsv" > "${name}.test.ids"
-        
-        seqkit grep -f "${name}.build_hmm.ids" "$fasta" > "build_hmm/${name}.fasta"  # grep sequences from the FASTA file
-        seqkit grep -f "${name}.test.ids" "$fasta" > "test/${name}.fasta"
-            
-        train_clusters=$(wc -l < "${name}.build_hmm.clusters")
-        test_clusters=$(wc -l < "${name}.test.clusters")
-        train_sequences=$(wc -l < "${name}.build_hmm.ids")
-        test_sequences=$(wc -l < "${name}.test.ids")
-
-        echo "Total clusters:       $total_clusters"
-        echo "Build HMM clusters:   $train_clusters"
-        echo "Test clusters:        $test_clusters"
-        echo "Build HMM sequences:  $train_sequences"
-        echo "Test sequences:       $test_sequences"
-        
-        rm "${name}.representatives.txt" \
-           "${name}.representatives.shuffled.txt" \
-           "${name}.build_hmm.clusters" \
-           "${name}.test.clusters" \
-           "${name}.build_hmm.ids" \
-           "${name}.test.ids"
-        echo "===== finished $name ====="
-        echo
-    done
-
-#### 3. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
+#### 2. For each .fasta in *build_hmm*, align them with Clustal Omega, then build HMMs with hmmbuild (took a while). 
 
     mkdir -p ./build_hmm/hmm
     for fasta in ./build_hmm/*.fasta
@@ -108,25 +47,25 @@ Loop:
         echo "===== finished $name ====="
     done
 
-#### 4. For each .fasta in *test*, check the test sequences with *hmmsearch*
+#### 3. According to true positive and false positive sequences, calculate cutoff for HMMs
 
-    mkdir -p ./test/hmm_results
-    for fasta in ./test/*.fasta
+    mkdir -p ./hmm_results
+    for fasta in ./*.fasta
     do
         test_name=$(basename "$fasta" .fasta)
-        for hmm in ./build_hmm/hmm/*.hmm
+        for hmm in ./hmm/*.hmm
         do
             hmm_name=$(basename "$hmm" .hmm)
             echo "===== $test_name vs $hmm_name ====="
             hmmsearch \
-                --tblout "./test/hmm_results/${test_name}__vs__${hmm_name}.tbl" \
-                "$hmm" "$fasta" > "./test/hmm_results/${test_name}__vs__${hmm_name}.out"
+                --tblout "./hmm_results/${test_name}__vs__${hmm_name}.tbl" \
+                "$hmm" "$fasta" > "./hmm_results/${test_name}__vs__${hmm_name}.out"
         done
     done
 
 #### 5. Data summary
 
-    python hmm_results_new.py
+    python ../hmm_results_new.py
 
 
 [Results](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_validation_scores_0.8.xlsx)
