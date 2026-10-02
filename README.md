@@ -56,7 +56,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 
 #### 5. Data summary
 
-    python ../hmm_results_new.py
+    python ./hmm_results.py
 
 
 [Results](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_validation_scores_0.8.xlsx)
