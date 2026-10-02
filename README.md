@@ -51,11 +51,11 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
         done
     done
 
-#### 4. Data summary 
+#### 4. Results summary and cutoff distribution
 
     python ./hmm_results.py
 
-Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%. Please refer to the [HMM report]() for the complete cutoff distribution.
+Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%. Please refer to the [HMM report](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_cutoff_analysis.xlsx) for the complete cutoff distribution.
 
 | model | score_type | N_positive | N_negative | selected_cutoff | TP | FP | TN | FN | TPR | FPR | FNR | precision |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -65,10 +65,6 @@ Based on the true-positive and false-positive scores, select a cutoff for each H
 | selected_MrpD_ast | relative | 309 | 18789 | 279.2 | 275 | 6 | 18783 | 34 | 89.0% | 0.0% | 11.0% | 97.9% |
 | selected_Putative_sodium-transporting_P-type_ATPase | relative | 455 | 18643 | 268.9 | 383 | 0 | 18643 | 72 | 84.2% | 0.0% | 15.8% | 100.0% |
 
-
-#### 5. Data summary
-
-    python ./hmm_results.py
 
 
 [Results](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_validation_scores_0.8.xlsx)
