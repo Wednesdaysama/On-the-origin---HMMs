@@ -55,7 +55,7 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 
     python ./hmm_results.py
 
-Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%. Please refer to the [HMM report](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_cutoff_analysis.xlsx) for the complete cutoff distribution.
+Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%, except for the selected_MrpA_ast HMM. Please refer to the [HMM report](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_cutoff_analysis.xlsx) for the complete cutoff distribution.
 
 | model | score_type | N_positive | N_negative | selected_cutoff | TP | FP | TN | FN | TPR | FPR | FNR | precision |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
