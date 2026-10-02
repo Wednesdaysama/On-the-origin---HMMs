@@ -55,15 +55,15 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
 
     python ./hmm_results.py
 
-Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%, except for the selected_MrpA_ast HMM. Please refer to the [HMM report](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_cutoff_analysis.xlsx) for the complete cutoff distribution.
+Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the selected cutoff has the lowest false positive rate (FPR) plus the false negative rate (FNR) , and that the cutoff > 0, except for the selected_MrpA_ast HMM. Please refer to the [HMM report](https://github.com/Wednesdaysama/On-the-origin---HMMs/blob/main/Results/hmm_cutoff_analysis.xlsx) for the complete cutoff distribution.
 
-| model | score_type | N_positive | N_negative | selected_cutoff | TP | FP | TN | FN | TPR | FPR | FNR | precision |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| selected_MrpA | relative | 363 | 18735 | 167.2 | 314 | 0 | 18735 | 49 | 86.5% | 0.0% | 13.5% | 100.0% |
-| selected_MrpA_ast | relative | 430 | 18668 | 76.8 | 341 | 38 | 18630 | 89 | 79.3% | 0.2% | 20.7% | 90.0% |
-| selected_MrpD | relative | 357 | 18741 | 162 | 310 | 1 | 18740 | 47 | 86.8% | 0.0% | 13.2% | 99.7% |
-| selected_MrpD_ast | relative | 309 | 18789 | 279.2 | 275 | 6 | 18783 | 34 | 89.0% | 0.0% | 11.0% | 97.9% |
-| selected_Putative_sodium-transporting_P-type_ATPase | relative | 455 | 18643 | 268.9 | 383 | 0 | 18643 | 72 | 84.2% | 0.0% | 15.8% | 100.0% |
+| model | score_type | N_positive | N_negative | cutoff | TP | FP | TN | FN | TPR | FPR | FNR | FPR+FNR |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| selected_MrpA | relative | 363 | 18735 | 1.6 | 362 | 48 | 18687 | 1 | 99.72% | 0.26% | 0.28% | 0.53% |
+| selected_MrpA_ast | relative | 430 | 18668 | 0.4 | 413 | 208 | 18460 | 17 | 96.0% | 1.1% | 4.0% | 5.07% |
+| selected_MrpD | relative | 357 | 18741 | 85.1 | 348 | 2 | 18739 | 9 | 97.5% | 0.0% | 2.5% | 2.53% |
+| selected_MrpD_ast | relative | 309 | 18789 | 61.3 | 308 | 17 | 18772 | 1 | 99.7% | 0.1% | 0.3% | 0.41% |
+| selected_Putative_sodium-transporting_P-type_ATPase | relative | 455 | 18643 | 28.6 | 455 | 103 | 18540 | 0 | 100.0% | 0.6% | 0.0% | 0.55% |
 
 
 For each sequence, the relative score was calculated as the difference between the bit score of the target HMM and the highest bit score among all competing HMMs. A sequence was classified as the corresponding selected subfamily when its relative score was greater than or equal to the model-specific relative score cutoff.
