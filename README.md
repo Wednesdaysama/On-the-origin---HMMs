@@ -51,7 +51,19 @@ We provide the hidden Markov models (HMMs) corresponding to the different functi
         done
     done
 
-#### 4. According to the true positive and false positive sequences, calculate the cutoff for each HMM
+#### 4. Data summary 
+
+    python ./hmm_results.py
+
+Based on the true-positive and false-positive scores, select a cutoff for each HMM. Make sure the true positive rate (TPR) >= 80%, the false negative rate (FNR) <= 20%, and the precision rate >= 90%. Please refer to the [HMM report]() for the complete cutoff distribution.
+
+| model | score_type | N_positive | N_negative | selected_cutoff | TP | FP | TN | FN | TPR | FPR | FNR | precision |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| selected_MrpA | relative | 363 | 18735 | 167.2 | 314 | 0 | 18735 | 49 | 86.5% | 0.0% | 13.5% | 100.0% |
+| selected_MrpA_ast | relative | 430 | 18668 | 76.8 | 341 | 38 | 18630 | 89 | 79.3% | 0.2% | 20.7% | 90.0% |
+| selected_MrpD | relative | 357 | 18741 | 162 | 310 | 1 | 18740 | 47 | 86.8% | 0.0% | 13.2% | 99.7% |
+| selected_MrpD_ast | relative | 309 | 18789 | 279.2 | 275 | 6 | 18783 | 34 | 89.0% | 0.0% | 11.0% | 97.9% |
+| selected_Putative_sodium-transporting_P-type_ATPase | relative | 455 | 18643 | 268.9 | 383 | 0 | 18643 | 72 | 84.2% | 0.0% | 15.8% | 100.0% |
 
 
 #### 5. Data summary
